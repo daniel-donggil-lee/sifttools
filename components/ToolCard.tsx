@@ -16,38 +16,38 @@ export default function ToolCard({ tool }: { tool: ToolReview }) {
   return (
     <Link
       href={`/tools/${tool.slug}`}
-      className="group block border border-gray-200/80 rounded-xl p-6 hover:shadow-lg hover:border-emerald-200 transition-all duration-200 bg-white hover:-translate-y-0.5"
+      className="group block bg-white rounded-2xl border border-gray-200/80 p-6 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1"
     >
       <div className="flex items-start gap-4">
         {domain && (
-          <div className="shrink-0 w-12 h-12 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden">
+          <div className="shrink-0 w-14 h-14 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden group-hover:border-emerald-200 transition-colors">
             <img
-              src={`https://www.google.com/s2/favicons?domain=${domain}&sz=48`}
+              src={`https://www.google.com/s2/favicons?domain=${domain}&sz=64`}
               alt={tool.title}
-              width={32}
-              height={32}
-              className="w-8 h-8"
+              width={36}
+              height={36}
+              className="w-9 h-9"
             />
           </div>
         )}
         <div className="flex-1 min-w-0">
-          <div className="flex items-start justify-between gap-2">
-            <h3 className="font-semibold text-gray-900 group-hover:text-emerald-700 transition-colors">
-              {tool.title}
-            </h3>
-            <RatingBadge rating={tool.rating} />
-          </div>
-          <p className="mt-1.5 text-sm text-gray-500 line-clamp-2 leading-relaxed">
+          <h3 className="font-bold text-gray-900 group-hover:text-emerald-700 transition-colors text-[0.9375rem] leading-snug">
+            {tool.title}
+          </h3>
+          <p className="mt-1.5 text-sm text-gray-400 line-clamp-2 leading-relaxed">
             {tool.description}
           </p>
         </div>
       </div>
 
-      <div className="mt-4 flex items-center gap-2">
-        <span className="px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-md text-xs font-medium">
-          {tool.category}
-        </span>
-        <span className="text-xs text-gray-400">{tool.price}</span>
+      <div className="mt-5 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="px-2.5 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-semibold capitalize">
+            {tool.category}
+          </span>
+          <span className="text-xs text-gray-400 font-medium">{tool.price}</span>
+        </div>
+        <RatingBadge rating={tool.rating} />
       </div>
     </Link>
   );

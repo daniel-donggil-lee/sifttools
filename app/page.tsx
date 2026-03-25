@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import ToolCard from "@/components/ToolCard";
 import { getAllTools, getAllComparisons } from "@/lib/mdx";
+import { CATEGORIES } from "@/lib/types";
 import Link from "next/link";
 
 export default function Home() {
@@ -11,20 +12,39 @@ export default function Home() {
     <>
       <Hero />
 
-      <section className="max-w-6xl mx-auto px-4 py-16">
-        <div className="flex items-end justify-between mb-8">
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900">
-              Latest Reviews
-            </h2>
-            <p className="mt-1 text-sm text-gray-500">
-              Honest, hands-on reviews of popular AI tools
-            </p>
+      {/* Categories */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6 py-14">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+            {CATEGORIES.map((cat) => (
+              <Link
+                key={cat.slug}
+                href={`/categories/${cat.slug}`}
+                className="group flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-emerald-50 border border-transparent hover:border-emerald-200/60 transition-all duration-200"
+              >
+                <span className="text-2xl">{cat.icon}</span>
+                <span className="text-xs font-semibold text-gray-500 group-hover:text-emerald-700 transition-colors text-center">
+                  {cat.name}
+                </span>
+              </Link>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* Latest Reviews */}
+      <section id="reviews" className="max-w-6xl mx-auto px-6 py-20">
+        <div className="mb-10">
+          <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">
+            Latest Reviews
+          </h2>
+          <p className="mt-2 text-gray-400 font-medium">
+            Honest, hands-on reviews of popular AI tools
+          </p>
         </div>
 
         {tools.length === 0 ? (
-          <p className="text-gray-500">No reviews yet. Check back soon!</p>
+          <p className="text-gray-400">No reviews yet. Check back soon!</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {tools.map((tool) => (
@@ -34,34 +54,33 @@ export default function Home() {
         )}
       </section>
 
+      {/* Comparisons */}
       {comparisons.length > 0 && (
-        <section className="max-w-6xl mx-auto px-4 pb-16">
-          <div className="flex items-end justify-between mb-8">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900">
-                Head-to-Head Comparisons
-              </h2>
-              <p className="mt-1 text-sm text-gray-500">
-                Side-by-side breakdowns to help you choose
-              </p>
-            </div>
+        <section className="max-w-6xl mx-auto px-6 pb-20">
+          <div className="mb-10">
+            <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">
+              Head-to-Head
+            </h2>
+            <p className="mt-2 text-gray-400 font-medium">
+              Side-by-side comparisons to help you decide
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {comparisons.map((comp) => (
               <Link
                 key={comp.slug}
                 href={`/compare/${comp.slug}`}
-                className="group block border border-gray-200/80 rounded-xl p-6 hover:shadow-lg hover:border-emerald-200 transition-all duration-200 bg-white hover:-translate-y-0.5"
+                className="group block bg-white rounded-2xl border border-gray-200/80 p-6 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1"
               >
-                <h3 className="font-semibold text-gray-900 group-hover:text-emerald-700 transition-colors">
+                <h3 className="font-bold text-gray-900 group-hover:text-emerald-700 transition-colors">
                   {comp.title}
                 </h3>
-                <p className="mt-2 text-sm text-gray-500 leading-relaxed">
+                <p className="mt-2 text-sm text-gray-400 leading-relaxed">
                   {comp.description}
                 </p>
                 {comp.winner && (
-                  <div className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">
-                    <span>Winner:</span> {comp.winner}
+                  <div className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200/50">
+                    Winner: {comp.winner}
                   </div>
                 )}
               </Link>
@@ -70,37 +89,46 @@ export default function Home() {
         </section>
       )}
 
-      <section className="bg-slate-50 border-t border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 py-16 text-center">
-          <h2 className="text-2xl font-bold text-gray-900">Why Trust SiftTools?</h2>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6">
-              <div className="w-12 h-12 mx-auto bg-emerald-100 rounded-xl flex items-center justify-center text-2xl mb-4">
-                🔍
+      {/* Trust Section */}
+      <section className="bg-white border-t border-gray-100">
+        <div className="max-w-6xl mx-auto px-6 py-20">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">
+              Why Trust SiftTools?
+            </h2>
+            <p className="mt-3 text-gray-400 font-medium max-w-lg mx-auto">
+              We believe in radical transparency. Here&apos;s how we operate.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: "🔬",
+                title: "Hands-On Testing",
+                desc: "Every tool is tested with real workflows. We spend days, not minutes, before publishing a review.",
+              },
+              {
+                icon: "🚫",
+                title: "No Pay-to-Play",
+                desc: "Rankings are never influenced by sponsorships. Tools cannot buy a higher score or better placement.",
+              },
+              {
+                icon: "📐",
+                title: "Data-Driven",
+                desc: "Concrete metrics, pricing breakdowns, and feature matrices. Opinions backed by evidence.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="bg-gray-50/80 rounded-2xl p-8 border border-gray-100"
+              >
+                <span className="text-3xl">{item.icon}</span>
+                <h3 className="mt-4 font-bold text-gray-900 text-lg">{item.title}</h3>
+                <p className="mt-2 text-sm text-gray-500 leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
-              <h3 className="font-semibold text-gray-900">Hands-On Testing</h3>
-              <p className="mt-2 text-sm text-gray-500 leading-relaxed">
-                Every tool is tested with real workflows before we write a single word.
-              </p>
-            </div>
-            <div className="p-6">
-              <div className="w-12 h-12 mx-auto bg-emerald-100 rounded-xl flex items-center justify-center text-2xl mb-4">
-                ⚖️
-              </div>
-              <h3 className="font-semibold text-gray-900">No Pay-to-Play</h3>
-              <p className="mt-2 text-sm text-gray-500 leading-relaxed">
-                Rankings are never influenced by sponsorships. We call it like we see it.
-              </p>
-            </div>
-            <div className="p-6">
-              <div className="w-12 h-12 mx-auto bg-emerald-100 rounded-xl flex items-center justify-center text-2xl mb-4">
-                📊
-              </div>
-              <h3 className="font-semibold text-gray-900">Data-Driven</h3>
-              <p className="mt-2 text-sm text-gray-500 leading-relaxed">
-                Concrete metrics, pricing breakdowns, and feature comparisons — not just opinions.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>

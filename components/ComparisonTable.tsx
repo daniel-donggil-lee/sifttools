@@ -11,17 +11,17 @@ export default function ComparisonTable({
   features: Feature[];
 }) {
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full border-collapse text-sm">
+    <div className="overflow-x-auto rounded-xl border border-gray-200">
+      <table className="w-full text-sm">
         <thead>
-          <tr className="border-b border-gray-200">
-            <th className="text-left py-3 px-4 font-medium text-gray-500">
+          <tr className="bg-gray-50">
+            <th className="text-left py-3.5 px-5 font-bold text-xs text-gray-400 uppercase tracking-wider">
               Feature
             </th>
             {tools.map((tool) => (
               <th
                 key={tool}
-                className="text-center py-3 px-4 font-semibold text-gray-900"
+                className="text-center py-3.5 px-5 font-bold text-gray-900"
               >
                 {tool}
               </th>
@@ -29,18 +29,18 @@ export default function ComparisonTable({
           </tr>
         </thead>
         <tbody>
-          {features.map((feature) => (
-            <tr key={feature.name} className="border-b border-gray-100">
-              <td className="py-3 px-4 text-gray-700">{feature.name}</td>
+          {features.map((feature, i) => (
+            <tr key={feature.name} className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}>
+              <td className="py-3.5 px-5 text-gray-700 font-medium">{feature.name}</td>
               {tools.map((tool) => {
                 const val = feature.values[tool];
                 return (
-                  <td key={tool} className="text-center py-3 px-4">
+                  <td key={tool} className="text-center py-3.5 px-5">
                     {typeof val === "boolean" ? (
                       val ? (
-                        <span className="text-emerald-600">&#10003;</span>
+                        <span className="inline-flex w-6 h-6 items-center justify-center bg-emerald-100 text-emerald-600 rounded-full text-xs font-bold">&#10003;</span>
                       ) : (
-                        <span className="text-gray-300">&#10007;</span>
+                        <span className="inline-flex w-6 h-6 items-center justify-center bg-gray-100 text-gray-400 rounded-full text-xs">&#10007;</span>
                       )
                     ) : (
                       <span className="text-gray-700">{val}</span>

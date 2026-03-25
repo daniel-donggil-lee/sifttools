@@ -1,57 +1,59 @@
 import Link from "next/link";
-import { CATEGORIES } from "@/lib/types";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-emerald-500/5 rounded-full blur-3xl" />
+    <section className="relative overflow-hidden bg-white border-b border-gray-100">
+      {/* Subtle gradient mesh */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(5,150,105,0.08),transparent)]" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-50/50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-teal-50/40 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4" />
 
-      <div className="relative max-w-6xl mx-auto px-4 py-24 md:py-32 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium mb-6">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          Updated weekly with new reviews
+      <div className="relative max-w-5xl mx-auto px-6 py-24 md:py-36 text-center">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/60 text-emerald-700 text-xs font-semibold tracking-wide uppercase mb-8">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          Updated weekly
         </div>
 
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-          Cut Through the Noise.
+        <h1 className="text-[clamp(2.25rem,5vw,4.5rem)] font-extrabold tracking-[-0.04em] text-gray-900 leading-[1.08]">
+          The smartest way to
           <br />
-          <span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">
-            Find AI Tools That Work.
+          <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 bg-clip-text text-transparent">
+            choose AI tools.
           </span>
         </h1>
 
-        <p className="mt-6 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-          No hype, no fluff — just honest, data-driven reviews of the tools
-          that actually matter. We test so you don&apos;t waste money.
+        <p className="mt-6 text-[clamp(1rem,2vw,1.25rem)] text-gray-500 max-w-xl mx-auto leading-relaxed font-medium">
+          We test every tool hands-on and publish honest, data-driven reviews.
+          No hype. No pay-to-play.
         </p>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-2">
-          {CATEGORIES.map((cat) => (
-            <Link
-              key={cat.slug}
-              href={`/categories/${cat.slug}`}
-              className="group px-4 py-2 bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/30 rounded-lg text-sm text-slate-300 hover:text-emerald-300 transition-all duration-200"
-            >
-              <span className="mr-1.5">{cat.icon}</span>
-              {cat.name}
-            </Link>
-          ))}
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <Link
+            href="#reviews"
+            className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-xl transition-all duration-200 shadow-xl shadow-gray-900/10 hover:shadow-gray-900/20 text-[0.9375rem]"
+          >
+            Browse Reviews
+            <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+          </Link>
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-xl border border-gray-200 transition-all duration-200 text-[0.9375rem]"
+          >
+            How we review
+          </Link>
         </div>
 
-        <div className="mt-14 flex items-center justify-center gap-8 text-sm text-slate-500">
-          <div className="flex items-center gap-2">
-            <svg className="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-            20+ Tools Reviewed
-          </div>
-          <div className="flex items-center gap-2">
-            <svg className="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-            8 Categories
-          </div>
-          <div className="flex items-center gap-2">
-            <svg className="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-            100% Independent
-          </div>
+        <div className="mt-16 flex items-center justify-center gap-8 md:gap-12">
+          {[
+            { num: "20+", label: "Tools Reviewed" },
+            { num: "8", label: "Categories" },
+            { num: "100%", label: "Independent" },
+          ].map((stat) => (
+            <div key={stat.label} className="text-center">
+              <div className="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight">{stat.num}</div>
+              <div className="text-xs font-medium text-gray-400 mt-1 uppercase tracking-wider">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
