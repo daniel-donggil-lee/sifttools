@@ -69,3 +69,25 @@ body {
   font-size: 0.875rem;
   color: #374151;
 }
+
+.prose iframe {
+  width: 100%;
+  border-radius: 0.75rem;
+  margin: 1.5rem 0;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+.prose strong {
+  color: #111827;
+}
+
+.prose a {
+  color: #059669;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: #047857;
+}
