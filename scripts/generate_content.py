@@ -13,6 +13,7 @@ Usage:
 import json
 import os
 import sys
+import subprocess
 from pathlib import Path
 from datetime import date
 
@@ -61,6 +62,28 @@ def get_next_tools(count: int = 2) -> list[dict]:
     candidates = [t for t in all_tools.values() if t["id"] not in published]
     candidates.sort(key=lambda t: t["priority"])
     return candidates[:count]
+
+
+def search_youtube(query: str, count: int = 2) -> list[dict]:
+    """yt-dlp로 YouTube 검색하여 실제 영상 ID, 제목, 채널명 반환."""
+    try:
+        result = subprocess.run(
+            ["yt-dlp", f"ytsearch{count}:{query}", "--flat-playlist", "--dump-json"],
+            capture_output=True, text=True, timeout=30,
+        )
+        videos = []
+        for line in result.stdout.strip().split("\n"):
+            if not line:
+                continue
+            d = json.loads(line)
+            videos.append({
+                "id": d.get("id", ""),
+                "title": d.get("title", ""),
+                "channel": d.get("channel") or d.get("uploader", "Unknown"),
+            })
+        return videos
+    except Exception:
+        return []
 
 
 CATEGORY_MAP = {
@@ -162,15 +185,7 @@ verdict: "[2 sentences: who should buy it and one specific reason why. Be direct
 - [Specific situation 1]
 - [Specific situation 2]
 
-## What YouTubers Are Saying
-
-We watched multiple video reviews to give you a well-rounded perspective. Search YouTube for "{name} review 2026" to find these and more:
-
-**Reviewer 1 — [Channel Name]:** [2-3 sentences summarizing their key opinion, what they liked, what they criticized. Write as if you watched their video. Be specific about their use case.]
-
-**Reviewer 2 — [Channel Name]:** [2-3 sentences with a contrasting or complementary opinion. Different use case or perspective from Reviewer 1.]
-
-**The consensus:** [1-2 sentences summarizing where reviewers generally agree and disagree.]
+{youtube_section}
 
 ## What Reddit Users Think
 
@@ -189,10 +204,9 @@ Real opinions from r/artificial, r/marketing, r/EntrepreneurRideAlong, and other
 [2 paragraphs. First: summarize your experience. Second: clear recommendation with the specific plan you'd choose and why. End with one sentence about who should try it today.]
 
 IMPORTANT — YOUTUBE SECTION:
-- Do NOT include iframe embeds or YouTube URLs — we cannot verify video IDs
-- Instead write text-based summaries of what typical reviewers say about this tool
-- Use real channel names of YouTubers known to review AI tools (Matt Wolfe, Adam Enfroy, Income School, etc.)
-- Keep it text-only — no links, no embeds
+- The YouTube section is pre-built with real video embeds. DO NOT modify the iframe HTML.
+- Write a 1-2 sentence summary for each video as indicated by [SUMMARY].
+- The videos are REAL — describe what a typical reviewer in that channel would say about this tool.
 
 CRITICAL RULES:
 - NEVER use phrases like "In today's rapidly evolving...", "Whether you're a...", "In conclusion..."
@@ -228,12 +242,39 @@ KEYWORDS = {
 }
 
 
+def build_youtube_section(tool_name: str) -> str:
+    """실제 YouTube 검색으로 영상을 찾아 임베드 섹션 생성."""
+    videos = search_youtube(f"{tool_name} review", count=2)
+    if not videos:
+        return (
+            "## What YouTubers Are Saying\n\n"
+            "We're currently curating video reviews for this tool. Check back soon!"
+        )
+
+    section = "## What YouTubers Are Saying\n\n"
+    for i, v in enumerate(videos, 1):
+        section += f"### Review {i}: {v['channel']}\n\n"
+        section += (
+            f'<iframe width="100%" height="400" '
+            f'src="https://www.youtube.com/embed/{v["id"]}" '
+            f'title="{v["title"]}" frameBorder="0" '
+            f'allow="accelerometer; autoplay; clipboard-write; encrypted-media; '
+            f'gyroscope; picture-in-picture" allowFullScreen></iframe>\n\n'
+        )
+        section += f"**{v['channel']}** — [SUMMARY: Write 1-2 sentences about what this reviewer likely covers based on the title \"{v['title']}\"]\n\n"
+
+    section += "**The consensus:** [1-2 sentences summarizing where reviewers generally agree and disagree.]\n"
+    return section
+
+
 def generate_review(tool: dict) -> str:
     client = anthropic.Anthropic()
     today = date.today().isoformat()
     slug = tool["id"]
     category_slug = CATEGORY_MAP.get(tool["category"], "productivity")
     keyword = KEYWORDS.get(slug, f"best {tool['category'].lower()} AI tool")
+
+    youtube_section = build_youtube_section(tool["name"])
 
     prompt = REVIEW_PROMPT.format(
         name=tool["name"],
@@ -247,6 +288,7 @@ def generate_review(tool: dict) -> str:
         today=today,
         slug=slug,
         keyword=keyword,
+        youtube_section=youtube_section,
     )
 
     message = client.messages.create(
