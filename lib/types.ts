@@ -24,14 +24,14 @@ export interface Comparison {
 }
 
 export const CATEGORIES = [
-  { slug: "writing", name: "AI Writing", icon: "pencil" },
-  { slug: "image", name: "AI Image", icon: "image" },
-  { slug: "video", name: "AI Video", icon: "video" },
-  { slug: "audio", name: "AI Audio", icon: "audio" },
-  { slug: "coding", name: "AI Coding", icon: "code" },
-  { slug: "productivity", name: "Productivity", icon: "zap" },
-  { slug: "marketing", name: "Marketing", icon: "megaphone" },
-  { slug: "chatbot", name: "Chatbots", icon: "chat" },
+  { slug: "writing", name: "AI Writing", icon: "\u270D\uFE0F" },
+  { slug: "image", name: "AI Image", icon: "\uD83C\uDFA8" },
+  { slug: "video", name: "AI Video", icon: "\uD83C\uDFAC" },
+  { slug: "audio", name: "AI Audio", icon: "\uD83C\uDF99\uFE0F" },
+  { slug: "coding", name: "AI Coding", icon: "\uD83D\uDCBB" },
+  { slug: "productivity", name: "Productivity", icon: "\u26A1" },
+  { slug: "marketing", name: "Marketing", icon: "\uD83D\uDCE3" },
+  { slug: "chatbot", name: "Chatbots", icon: "\uD83E\uDD16" },
 ] as const;
 
 export type CategorySlug = (typeof CATEGORIES)[number]["slug"];

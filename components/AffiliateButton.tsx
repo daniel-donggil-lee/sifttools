@@ -10,11 +10,11 @@ export default function AffiliateButton({
       href={url}
       target="_blank"
       rel="sponsored noopener noreferrer"
-      className="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg transition-colors text-sm"
+      className="group inline-flex w-full items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5"
     >
       {label}
       <svg
-        className="ml-2 w-4 h-4"
+        className="w-4 h-4 transition-transform group-hover:translate-x-1"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
