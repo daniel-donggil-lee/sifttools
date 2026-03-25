@@ -1,0 +1,52 @@
+name: Auto Publish Content
+
+on:
+  schedule:
+    # 월/수/금 UTC 06:00 (KST 15:00)
+    - cron: '0 6 * * 1,3,5'
+  workflow_dispatch:
+    inputs:
+      review_count:
+        description: 'Number of reviews to generate'
+        default: '2'
+      comparison_count:
+        description: 'Number of comparisons to generate'
+        default: '1'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Generate tool reviews
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/generate_content.py ${{ inputs.review_count || '2' }}
+
+      - name: Generate comparisons
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/generate_comparison.py ${{ inputs.comparison_count || '1' }}
+
+      - name: Commit and push
+        run: |
+          git config user.name "SiftTools Bot"
+          git config user.email "bot@sifttools.com"
+          git add content/ data/published.json
+          if git diff --staged --quiet; then
+            echo "No new content to publish"
+          else
+            git commit -m "Auto-publish: new AI tool reviews $(date +%Y-%m-%d)"
+            git push
+          fi

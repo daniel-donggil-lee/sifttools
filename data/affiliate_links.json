@@ -1,0 +1,124 @@
+{
+  "_note": "어필리에이트 가입 후 실제 링크로 교체. 가입 전까지는 공식 URL 사용.",
+  "links": {
+    "jasper": {
+      "url": "https://www.jasper.ai",
+      "affiliate_url": "",
+      "commission": "$59 per sale",
+      "program_url": "https://www.jasper.ai/partners",
+      "status": "pending"
+    },
+    "surfer-seo": {
+      "url": "https://surferseo.com",
+      "affiliate_url": "",
+      "commission": "25% recurring",
+      "program_url": "https://surferseo.com/affiliate",
+      "status": "pending"
+    },
+    "copy-ai": {
+      "url": "https://www.copy.ai",
+      "affiliate_url": "",
+      "commission": "$30 per sale",
+      "program_url": "https://www.copy.ai/affiliate",
+      "status": "pending"
+    },
+    "writesonic": {
+      "url": "https://writesonic.com",
+      "affiliate_url": "",
+      "commission": "30% recurring",
+      "program_url": "https://writesonic.com/affiliate",
+      "status": "pending"
+    },
+    "notion-ai": {
+      "url": "https://www.notion.so/product/ai",
+      "affiliate_url": "",
+      "commission": "varies",
+      "program_url": "",
+      "status": "pending"
+    },
+    "cursor": {
+      "url": "https://cursor.sh",
+      "affiliate_url": "",
+      "commission": "~$20 per sale",
+      "program_url": "",
+      "status": "pending"
+    },
+    "runway-ml": {
+      "url": "https://runwayml.com",
+      "affiliate_url": "",
+      "commission": "varies",
+      "program_url": "",
+      "status": "pending"
+    },
+    "descript": {
+      "url": "https://www.descript.com",
+      "affiliate_url": "",
+      "commission": "~$25 per sale",
+      "program_url": "https://www.descript.com/affiliates",
+      "status": "pending"
+    },
+    "synthesia": {
+      "url": "https://www.synthesia.io",
+      "affiliate_url": "",
+      "commission": "25% recurring",
+      "program_url": "https://www.synthesia.io/affiliates",
+      "status": "pending"
+    },
+    "elevenlabs": {
+      "url": "https://elevenlabs.io",
+      "affiliate_url": "",
+      "commission": "22% recurring",
+      "program_url": "https://elevenlabs.io/affiliates",
+      "status": "pending"
+    },
+    "gamma": {
+      "url": "https://gamma.app",
+      "affiliate_url": "",
+      "commission": "varies",
+      "program_url": "",
+      "status": "pending"
+    },
+    "beautiful-ai": {
+      "url": "https://www.beautiful.ai",
+      "affiliate_url": "",
+      "commission": "varies",
+      "program_url": "",
+      "status": "pending"
+    },
+    "otter-ai": {
+      "url": "https://otter.ai",
+      "affiliate_url": "",
+      "commission": "varies",
+      "program_url": "",
+      "status": "pending"
+    },
+    "grammarly": {
+      "url": "https://www.grammarly.com",
+      "affiliate_url": "",
+      "commission": "$25 per sale",
+      "program_url": "https://www.grammarly.com/affiliates",
+      "status": "pending"
+    },
+    "canva-ai": {
+      "url": "https://www.canva.com",
+      "affiliate_url": "",
+      "commission": "varies",
+      "program_url": "https://www.canva.com/affiliates",
+      "status": "pending"
+    },
+    "adobe-firefly": {
+      "url": "https://www.adobe.com/products/firefly.html",
+      "affiliate_url": "",
+      "commission": "85% first month",
+      "program_url": "https://www.adobe.com/affiliates.html",
+      "status": "pending"
+    },
+    "perplexity": {
+      "url": "https://www.perplexity.ai",
+      "affiliate_url": "",
+      "commission": "$20 per sale",
+      "program_url": "",
+      "status": "pending"
+    }
+  }
+}

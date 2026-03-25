@@ -1,0 +1,234 @@
+{
+  "tools": [
+    {
+      "id": "jasper",
+      "name": "Jasper",
+      "category": "Writing",
+      "url": "https://www.jasper.ai",
+      "pricing": "Starts at $49/mo",
+      "affiliate_program": true,
+      "priority": 1,
+      "tags": ["ai-writing", "copywriting", "content-generation", "marketing"],
+      "description": "AI writing assistant for marketing teams and content creators"
+    },
+    {
+      "id": "surfer-seo",
+      "name": "Surfer SEO",
+      "category": "SEO",
+      "url": "https://surferseo.com",
+      "pricing": "Starts at $89/mo",
+      "affiliate_program": true,
+      "priority": 2,
+      "tags": ["seo", "content-optimization", "keyword-research"],
+      "description": "AI-powered SEO tool for content optimization and keyword research"
+    },
+    {
+      "id": "copy-ai",
+      "name": "Copy.ai",
+      "category": "Writing",
+      "url": "https://www.copy.ai",
+      "pricing": "Free plan available, Pro from $49/mo",
+      "affiliate_program": true,
+      "priority": 3,
+      "tags": ["ai-writing", "copywriting", "sales-copy"],
+      "description": "AI copywriting tool for sales copy, blog posts, and social media"
+    },
+    {
+      "id": "writesonic",
+      "name": "Writesonic",
+      "category": "Writing",
+      "url": "https://writesonic.com",
+      "pricing": "Free plan available, Pro from $20/mo",
+      "affiliate_program": true,
+      "priority": 4,
+      "tags": ["ai-writing", "blog-posts", "landing-pages"],
+      "description": "AI writer for blogs, ads, emails, and websites"
+    },
+    {
+      "id": "notion-ai",
+      "name": "Notion AI",
+      "category": "Productivity",
+      "url": "https://www.notion.so/product/ai",
+      "pricing": "$10/mo add-on",
+      "affiliate_program": true,
+      "priority": 5,
+      "tags": ["productivity", "note-taking", "project-management", "ai-assistant"],
+      "description": "AI assistant integrated into Notion workspace"
+    },
+    {
+      "id": "midjourney",
+      "name": "Midjourney",
+      "category": "Image",
+      "url": "https://www.midjourney.com",
+      "pricing": "Starts at $10/mo",
+      "affiliate_program": false,
+      "priority": 6,
+      "tags": ["image-generation", "ai-art", "design"],
+      "description": "AI image generation tool for creating stunning artwork and visuals"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "category": "Coding",
+      "url": "https://cursor.sh",
+      "pricing": "Free plan available, Pro $20/mo",
+      "affiliate_program": true,
+      "priority": 7,
+      "tags": ["coding", "ide", "ai-programming", "developer-tools"],
+      "description": "AI-first code editor built on VS Code"
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "category": "Chatbot",
+      "url": "https://claude.ai",
+      "pricing": "Free plan available, Pro $20/mo",
+      "affiliate_program": false,
+      "priority": 8,
+      "tags": ["chatbot", "ai-assistant", "reasoning", "coding"],
+      "description": "Anthropic's AI assistant known for safety and reasoning capabilities"
+    },
+    {
+      "id": "runway-ml",
+      "name": "Runway ML",
+      "category": "Video",
+      "url": "https://runwayml.com",
+      "pricing": "Free plan available, Pro from $15/mo",
+      "affiliate_program": true,
+      "priority": 9,
+      "tags": ["video-generation", "video-editing", "ai-video"],
+      "description": "AI-powered creative tools for video generation and editing"
+    },
+    {
+      "id": "descript",
+      "name": "Descript",
+      "category": "Video",
+      "url": "https://www.descript.com",
+      "pricing": "Free plan available, Pro from $24/mo",
+      "affiliate_program": true,
+      "priority": 10,
+      "tags": ["video-editing", "podcast", "transcription", "screen-recording"],
+      "description": "AI-powered video and podcast editing platform"
+    },
+    {
+      "id": "synthesia",
+      "name": "Synthesia",
+      "category": "Video",
+      "url": "https://www.synthesia.io",
+      "pricing": "Starts at $29/mo",
+      "affiliate_program": true,
+      "priority": 11,
+      "tags": ["ai-video", "avatar", "training-videos"],
+      "description": "AI video generation platform with realistic avatars"
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "category": "Audio",
+      "url": "https://elevenlabs.io",
+      "pricing": "Free plan available, Pro from $5/mo",
+      "affiliate_program": true,
+      "priority": 12,
+      "tags": ["text-to-speech", "voice-cloning", "ai-audio"],
+      "description": "AI voice generator and text-to-speech platform"
+    },
+    {
+      "id": "gamma",
+      "name": "Gamma",
+      "category": "Productivity",
+      "url": "https://gamma.app",
+      "pricing": "Free plan available, Pro from $10/mo",
+      "affiliate_program": true,
+      "priority": 13,
+      "tags": ["presentations", "slides", "ai-design"],
+      "description": "AI-powered presentation and document creation tool"
+    },
+    {
+      "id": "beautiful-ai",
+      "name": "Beautiful.ai",
+      "category": "Productivity",
+      "url": "https://www.beautiful.ai",
+      "pricing": "Starts at $12/mo",
+      "affiliate_program": true,
+      "priority": 14,
+      "tags": ["presentations", "slides", "design"],
+      "description": "AI presentation software with smart templates"
+    },
+    {
+      "id": "otter-ai",
+      "name": "Otter.ai",
+      "category": "Productivity",
+      "url": "https://otter.ai",
+      "pricing": "Free plan available, Pro from $16.99/mo",
+      "affiliate_program": true,
+      "priority": 15,
+      "tags": ["transcription", "meeting-notes", "ai-assistant"],
+      "description": "AI meeting assistant for transcription and note-taking"
+    },
+    {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "category": "Writing",
+      "url": "https://www.grammarly.com",
+      "pricing": "Free plan available, Premium from $12/mo",
+      "affiliate_program": true,
+      "priority": 16,
+      "tags": ["grammar", "writing-assistant", "proofreading"],
+      "description": "AI writing assistant for grammar, clarity, and style"
+    },
+    {
+      "id": "canva-ai",
+      "name": "Canva AI",
+      "category": "Image",
+      "url": "https://www.canva.com",
+      "pricing": "Free plan available, Pro from $13/mo",
+      "affiliate_program": true,
+      "priority": 17,
+      "tags": ["design", "image-generation", "templates"],
+      "description": "AI-powered design platform with Magic Studio features"
+    },
+    {
+      "id": "adobe-firefly",
+      "name": "Adobe Firefly",
+      "category": "Image",
+      "url": "https://www.adobe.com/products/firefly.html",
+      "pricing": "Free plan available, Premium from $4.99/mo",
+      "affiliate_program": true,
+      "priority": 18,
+      "tags": ["image-generation", "ai-art", "adobe", "design"],
+      "description": "Adobe's generative AI tool for image creation and editing"
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "category": "Chatbot",
+      "url": "https://www.perplexity.ai",
+      "pricing": "Free plan available, Pro $20/mo",
+      "affiliate_program": true,
+      "priority": 19,
+      "tags": ["ai-search", "research", "chatbot"],
+      "description": "AI-powered search engine with cited answers"
+    },
+    {
+      "id": "pika",
+      "name": "Pika",
+      "category": "Video",
+      "url": "https://pika.art",
+      "pricing": "Free plan available, Pro from $10/mo",
+      "affiliate_program": false,
+      "priority": 20,
+      "tags": ["video-generation", "ai-video", "animation"],
+      "description": "AI video generation tool for creating and editing videos"
+    }
+  ],
+  "categories": [
+    {"id": "Writing", "slug": "ai-writing-tools"},
+    {"id": "Image", "slug": "ai-image-tools"},
+    {"id": "Coding", "slug": "ai-coding-tools"},
+    {"id": "Video", "slug": "ai-video-tools"},
+    {"id": "Productivity", "slug": "ai-productivity-tools"},
+    {"id": "Chatbot", "slug": "ai-chatbots"},
+    {"id": "SEO", "slug": "ai-seo-tools"},
+    {"id": "Audio", "slug": "ai-audio-tools"}
+  ]
+}
