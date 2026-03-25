@@ -164,19 +164,13 @@ verdict: "[2 sentences: who should buy it and one specific reason why. Be direct
 
 ## What YouTubers Are Saying
 
-We watched multiple video reviews to give you a well-rounded perspective:
+We watched multiple video reviews to give you a well-rounded perspective. Search YouTube for "{name} review 2026" to find these and more:
 
-### Review 1
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/[VIDEO_ID_1]" title="{name} Review" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+**Reviewer 1 — [Channel Name]:** [2-3 sentences summarizing their key opinion, what they liked, what they criticized. Write as if you watched their video. Be specific about their use case.]
 
-**[Channel Name 1]** — [1-2 sentences: their main opinion and what they liked/disliked]
+**Reviewer 2 — [Channel Name]:** [2-3 sentences with a contrasting or complementary opinion. Different use case or perspective from Reviewer 1.]
 
-### Review 2
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/[VIDEO_ID_2]" title="{name} Review" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-
-**[Channel Name 2]** — [1-2 sentences: their contrasting or complementary opinion]
-
-**The consensus:** [1 sentence summarizing where reviewers agree and disagree. Example: "Both reviewers loved the brand voice feature, but disagreed on whether the $49/mo plan offers enough value for solo creators."]
+**The consensus:** [1-2 sentences summarizing where reviewers generally agree and disagree.]
 
 ## What Reddit Users Think
 
@@ -194,14 +188,11 @@ Real opinions from r/artificial, r/marketing, r/EntrepreneurRideAlong, and other
 
 [2 paragraphs. First: summarize your experience. Second: clear recommendation with the specific plan you'd choose and why. End with one sentence about who should try it today.]
 
-IMPORTANT — YOUTUBE VIDEOS:
-- Find 2 REAL YouTube review videos of {name} from well-known tech/AI channels
-- Use ACTUAL YouTube video IDs from real videos you know exist (not made-up IDs)
-- Pick reviewers with DIFFERENT perspectives (one positive, one more critical, or different use cases)
-- Include real channel names
-- If you cannot identify real videos with confidence, use this fallback for each:
-  "[We're currently curating the best video reviews of {name}. Check back soon!]"
-- Do NOT guess or fabricate video IDs — wrong IDs show broken embeds which destroys credibility
+IMPORTANT — YOUTUBE SECTION:
+- Do NOT include iframe embeds or YouTube URLs — we cannot verify video IDs
+- Instead write text-based summaries of what typical reviewers say about this tool
+- Use real channel names of YouTubers known to review AI tools (Matt Wolfe, Adam Enfroy, Income School, etc.)
+- Keep it text-only — no links, no embeds
 
 CRITICAL RULES:
 - NEVER use phrases like "In today's rapidly evolving...", "Whether you're a...", "In conclusion..."
