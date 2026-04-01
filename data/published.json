@@ -1,20 +1,11 @@
 {
   "posts": [
-    {
-      "tool_id": "surfer-seo",
-      "published_at": "2026-03-25"
-    },
-    {
-      "tool_id": "jasper",
-      "published_at": "2026-04-01"
-    },
-    {
-      "tool_id": "copy-ai",
-      "published_at": "2026-04-01"
-    },
-    {
-      "tool_id": "compare-jasper-vs-copy-ai",
-      "published_at": "2026-04-01"
-    }
+    {"tool_id": "jasper", "published_at": "2026-03-25"},
+    {"tool_id": "surfer-seo", "published_at": "2026-03-25"},
+    {"tool_id": "jasper", "published_at": "2026-04-01"},
+    {"tool_id": "copy-ai", "published_at": "2026-04-01"},
+    {"tool_id": "compare-jasper-vs-copy-ai", "published_at": "2026-04-01"},
+    {"tool_id": "compare-jasper-vs-writesonic", "published_at": "2026-04-01"},
+    {"tool_id": "compare-copy-ai-vs-writesonic", "published_at": "2026-04-01"}
   ]
 }
