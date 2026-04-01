@@ -99,6 +99,18 @@
     {
       "tool_id": "compare-writesonic-vs-grammarly",
       "published_at": "2026-04-01"
+    },
+    {
+      "tool_id": "grammarly",
+      "published_at": "2026-04-01"
+    },
+    {
+      "tool_id": "canva-ai",
+      "published_at": "2026-04-01"
+    },
+    {
+      "tool_id": "compare-notion-ai-vs-otter-ai",
+      "published_at": "2026-04-01"
     }
   ]
 }
