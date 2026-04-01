@@ -111,6 +111,18 @@
     {
       "tool_id": "compare-notion-ai-vs-otter-ai",
       "published_at": "2026-04-01"
+    },
+    {
+      "tool_id": "adobe-firefly",
+      "published_at": "2026-03-29"
+    },
+    {
+      "tool_id": "perplexity",
+      "published_at": "2026-03-31"
+    },
+    {
+      "tool_id": "pika",
+      "published_at": "2026-04-01"
     }
   ]
 }
