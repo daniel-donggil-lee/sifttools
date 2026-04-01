@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import { getToolBySlug, getAllTools } from "@/lib/mdx";
 import ToolHero from "@/components/ToolHero";
 import type { Metadata } from "next";
@@ -32,7 +33,7 @@ export default async function ToolPage({ params }: Props) {
       <ToolHero meta={meta} />
 
       <article className="prose max-w-none">
-        <MDXRemote source={content} />
+        <MDXRemote source={content} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
       </article>
     </div>
   );
