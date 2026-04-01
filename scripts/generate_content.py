@@ -98,15 +98,17 @@ CATEGORY_MAP = {
     "SEO": "writing",
 }
 
-REVIEW_PROMPT = """You are a senior tech reviewer who has personally used {name} for at least 3 months. You write for SiftTools.com.
+REVIEW_PROMPT = """You are writing an AI tool review for SiftTools.com.
 
 Your writing style:
-- First person ("I tested", "In my experience")
-- Specific and opinionated — never vague
-- You mention exact numbers (response times, word counts, export formats)
-- You compare to competitors naturally ("unlike Copy.ai, Jasper does X")
-- You share real workflow examples ("When I needed to write 20 product descriptions for a client...")
+- Third person, informational tone — NOT first person
+- Specific and direct — never vague or promotional
+- Include exact numbers (pricing tiers, limits, export formats)
+- Compare to competitors by name where relevant
 - Short paragraphs, scannable, no filler
+- NO fake personal experiences ("I tested for 6 months", "I switched to...")
+- NO Reddit quotes or YouTube embeds
+- NO phrases like "In today's rapidly evolving...", "Whether you're a...", "In conclusion..."
 
 Tool info:
 - Name: {name}
@@ -117,12 +119,15 @@ Tool info:
 - Tags: {tags}
 
 TARGET KEYWORD: "{keyword}"
-Write the review optimized for this long-tail keyword. Use it naturally in the title, first paragraph, and 2-3 subheadings.
+Use it naturally in the title, first paragraph, and 2-3 subheadings.
+
+IMPORTANT: Vary the section structure for each review. Do NOT use the same section order every time.
+Pick 5-7 sections from the options below and arrange them in an order that makes sense for this specific tool:
 
 Output EXACTLY this MDX format. No text before or after:
 
 ---
-title: "{name} Review 2026: [Compelling subtitle that includes target keyword naturally]"
+title: "{name} Review 2026: [Subtitle that includes target keyword naturally]"
 description: "[SEO meta description 150-160 chars, includes target keyword]"
 rating: [Honest rating 3.0-5.0 — 4.0+ means genuinely good, 3.x means decent with caveats]
 price: "{pricing}"
@@ -131,7 +136,7 @@ category: "{category_slug}"
 publishedAt: "{today}"
 image: "/images/{slug}.png"
 pros:
-  - "[Specific pro with a number or comparison, e.g. 'Generates 1,000-word drafts in under 30 seconds']"
+  - "[Specific pro with a number or comparison]"
   - "[Pro 2 — mention a specific feature name]"
   - "[Pro 3]"
   - "[Pro 4]"
@@ -139,83 +144,27 @@ cons:
   - "[Honest con — e.g. 'No API access on the $49/mo plan']"
   - "[Con 2 — mention a specific limitation]"
   - "[Con 3]"
-verdict: "[2 sentences: who should buy it and one specific reason why. Be direct.]"
+verdict: "[2 sentences: who it's best for and one specific reason why. Be direct.]"
 ---
 
-## What is {name}? (And Why I Switched to It)
+SECTION OPTIONS (pick 5-7, vary the order):
 
-[Start with a personal hook — what problem you were solving when you found this tool. Then explain what it does in plain language. Mention 1 competitor comparison. 2 short paragraphs.]
-
-## What I Actually Use It For
-
-[Describe 2-3 real workflow examples. Be specific about the task, how the tool helped, and the result. This section should feel like a friend telling you about their setup.]
-
-## The Features That Matter
-
-### [Feature 1 — use specific feature name]
-[What it does, how well it works, one specific example. 3-4 sentences max.]
-
-### [Feature 2]
-[Same format. Mention a number or metric.]
-
-### [Feature 3]
-[Same format. Compare to a competitor if relevant.]
-
-### What's Missing
-[1-2 features you wish it had. Be specific.]
-
-## Pricing Breakdown
-
-| Plan | Price | What You Get | Worth It? |
-|------|-------|-------------|-----------|
-| [Plan 1] | [Price] | [Key features] | [Your take: "Best for X" or "Skip this"] |
-| [Plan 2] | [Price] | [Key features] | [Your take] |
-| [Plan 3] | [Price] | [Key features] | [Your take] |
-
-[1 paragraph about value for money. Compare to competitor pricing.]
-
-## Who Should (and Shouldn't) Use {name}
-
-**Good fit if you:**
-- [Specific use case 1]
-- [Specific use case 2]
-- [Specific use case 3]
-
-**Skip it if you:**
-- [Specific situation 1]
-- [Specific situation 2]
-
-{youtube_section}
-
-## What Reddit Users Think
-
-Real opinions from r/artificial, r/marketing, r/EntrepreneurRideAlong, and other relevant subreddits:
-
-> **u/[username1]** (r/[subreddit]): "[A real-sounding quote about their experience with {name} — positive or mixed. 1-2 sentences.]"
-
-> **u/[username2]** (r/[subreddit]): "[A contrasting opinion. Maybe they switched from/to a competitor. 1-2 sentences.]"
-
-> **u/[username3]** (r/[subreddit]): "[A practical tip or specific use case. 1-2 sentences.]"
-
-**Common themes on Reddit:** [2-3 sentences summarizing what Reddit users generally agree on — both positive feedback and recurring complaints. Be specific about which issues come up most often.]
-
-## Final Verdict
-
-[2 paragraphs. First: summarize your experience. Second: clear recommendation with the specific plan you'd choose and why. End with one sentence about who should try it today.]
-
-IMPORTANT — YOUTUBE SECTION:
-- The YouTube section is pre-built with real video embeds. DO NOT modify the iframe HTML.
-- Write a 1-2 sentence summary for each video as indicated by [SUMMARY].
-- The videos are REAL — describe what a typical reviewer in that channel would say about this tool.
+- **Overview** — What {name} does, who it's for, how it compares at a high level. 2 short paragraphs.
+- **Key Features** — 3-4 features with specific details. Use ### subheadings with actual feature names.
+- **What's Missing** — 1-2 features the tool lacks. Be specific.
+- **Pricing Breakdown** — Table with plans, prices, key features, and a brief take on value.
+- **Who It's For / Who Should Skip It** — Bullet lists of good-fit and bad-fit scenarios.
+- **How It Compares to [Competitor]** — Direct comparison on 2-3 dimensions.
+- **Use Cases** — 2-3 specific workflows where this tool excels.
+- **Bottom Line** — 1-2 paragraphs with a clear recommendation.
 
 CRITICAL RULES:
-- NEVER use phrases like "In today's rapidly evolving...", "Whether you're a...", "In conclusion..."
-- NEVER start a paragraph with "When it comes to..."
-- Use "I" and share experiences — this is a personal review, not a Wikipedia article
-- Include at least 3 specific numbers/metrics throughout the review
-- Mention at least 2 competitor tools by name for comparison
-- Keep total length 1500-2000 words
-- Every section must add unique value — no repeating the same point
+- Do NOT simulate personal experience. Write factual analysis.
+- Do NOT include Reddit quotes or YouTube sections.
+- Include at least 3 specific numbers/metrics throughout the review.
+- Mention at least 2 competitor tools by name for comparison.
+- Keep total length 1200-1800 words.
+- Every section must add unique value — no repeating the same point.
 """
 
 KEYWORDS = {
@@ -274,8 +223,6 @@ def generate_review(tool: dict) -> str:
     category_slug = CATEGORY_MAP.get(tool["category"], "productivity")
     keyword = KEYWORDS.get(slug, f"best {tool['category'].lower()} AI tool")
 
-    youtube_section = build_youtube_section(tool["name"])
-
     prompt = REVIEW_PROMPT.format(
         name=tool["name"],
         category=tool["category"],
@@ -288,7 +235,6 @@ def generate_review(tool: dict) -> str:
         today=today,
         slug=slug,
         keyword=keyword,
-        youtube_section=youtube_section,
     )
 
     message = client.messages.create(

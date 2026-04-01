@@ -36,16 +36,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 py-10">
           <Link
             href="/finder"
-            className="group block bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-200/60 p-8 hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300"
+            className="group block bg-gray-50 rounded-2xl border border-gray-200 p-8 hover:border-gray-300 hover:shadow-lg transition-all duration-300"
           >
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-2xl">🔍</span>
-                  <span className="px-2.5 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full">
-                    Interactive
-                  </span>
-                </div>
                 <h2 className="text-xl font-extrabold text-gray-900 tracking-tight">
                   Not sure which tool to pick?
                 </h2>
@@ -71,10 +65,9 @@ export default function Home() {
                 <Link
                   key={cat.slug}
                   href={`/categories/${cat.slug}`}
-                  className="group flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-emerald-50 border border-transparent hover:border-emerald-200/60 transition-all duration-200"
+                  className="group flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-gray-100 border border-transparent hover:border-gray-200 transition-all duration-200"
                 >
-                  <span className="text-2xl">{cat.icon}</span>
-                  <span className="text-xs font-semibold text-gray-500 group-hover:text-emerald-700 transition-colors text-center">
+                  <span className="text-sm font-bold text-gray-700 group-hover:text-gray-900 transition-colors text-center">
                     {cat.name}
                   </span>
                   <span className="text-[10px] font-medium text-gray-300">
@@ -141,16 +134,16 @@ export default function Home() {
               <Link
                 key={comp.slug}
                 href={`/compare/${comp.slug}`}
-                className="group block bg-white rounded-2xl border border-gray-200/80 p-6 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1"
+                className="group block bg-white rounded-2xl border border-gray-200/80 p-6 hover:border-gray-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
               >
-                <h3 className="font-bold text-gray-900 group-hover:text-emerald-700 transition-colors">
+                <h3 className="font-bold text-gray-900 group-hover:text-gray-700 transition-colors">
                   {comp.title}
                 </h3>
                 <p className="mt-2 text-sm text-gray-400 leading-relaxed">
                   {comp.description}
                 </p>
                 {comp.winner && (
-                  <div className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200/50">
+                  <div className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-gray-700 bg-gray-100 px-3 py-1.5 rounded-lg border border-gray-200">
                     Winner: {comp.winner}
                   </div>
                 )}
@@ -160,47 +153,14 @@ export default function Home() {
         </section>
       )}
 
-      {/* Trust Section */}
+      {/* How We Review */}
       <section className="bg-white border-t border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 py-20">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">
-              Why Trust SiftTools?
-            </h2>
-            <p className="mt-3 text-gray-400 font-medium max-w-lg mx-auto">
-              We believe in radical transparency. Here&apos;s how we operate.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: "🔬",
-                title: "Hands-On Testing",
-                desc: "Every tool is tested with real workflows. We spend days, not minutes, before publishing a review.",
-              },
-              {
-                icon: "🚫",
-                title: "No Pay-to-Play",
-                desc: "Rankings are never influenced by sponsorships. Tools cannot buy a higher score or better placement.",
-              },
-              {
-                icon: "📐",
-                title: "Data-Driven",
-                desc: "Concrete metrics, pricing breakdowns, and feature matrices. Opinions backed by evidence.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="bg-gray-50/80 rounded-2xl p-8 border border-gray-100"
-              >
-                <span className="text-3xl">{item.icon}</span>
-                <h3 className="mt-4 font-bold text-gray-900 text-lg">{item.title}</h3>
-                <p className="mt-2 text-sm text-gray-500 leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <p className="text-center text-sm text-gray-400 max-w-xl mx-auto leading-relaxed">
+            We review AI tools based on features, pricing, and real use cases.
+            Some links on this site are affiliate links — this helps keep the site free.
+            Affiliate relationships never affect our ratings or rankings.
+          </p>
         </div>
       </section>
     </>

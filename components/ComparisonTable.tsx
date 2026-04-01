@@ -38,7 +38,7 @@ export default function ComparisonTable({
                   <td key={tool} className="text-center py-3.5 px-5">
                     {typeof val === "boolean" ? (
                       val ? (
-                        <span className="inline-flex w-6 h-6 items-center justify-center bg-emerald-100 text-emerald-600 rounded-full text-xs font-bold">&#10003;</span>
+                        <span className="inline-flex w-6 h-6 items-center justify-center bg-gray-900 text-white rounded-full text-xs font-bold">&#10003;</span>
                       ) : (
                         <span className="inline-flex w-6 h-6 items-center justify-center bg-gray-100 text-gray-400 rounded-full text-xs">&#10007;</span>
                       )

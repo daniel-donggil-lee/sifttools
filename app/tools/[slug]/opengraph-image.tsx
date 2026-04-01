@@ -41,11 +41,11 @@ export default async function OGImage({
     >
       {/* Top bar */}
       <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 40 }}>
-        <div style={{ width: 40, height: 40, borderRadius: 10, background: "#059669", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: 40, height: 40, borderRadius: 10, background: "#111827", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <span style={{ color: "white", fontSize: 20, fontWeight: 900 }}>S</span>
         </div>
         <span style={{ fontSize: 22, fontWeight: 800, color: "#1f2937" }}>
-          Sift<span style={{ color: "#059669" }}>Tools</span>
+          SiftTools
         </span>
         <span style={{ fontSize: 16, color: "#9ca3af", marginLeft: 16, fontWeight: 600 }}>
           {meta.category.toUpperCase()} REVIEW

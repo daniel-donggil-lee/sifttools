@@ -42,11 +42,11 @@ export default async function OGImage({
     >
       {/* Top bar */}
       <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 40 }}>
-        <div style={{ width: 40, height: 40, borderRadius: 10, background: "#059669", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: 40, height: 40, borderRadius: 10, background: "#374151", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <span style={{ color: "white", fontSize: 20, fontWeight: 900 }}>S</span>
         </div>
         <span style={{ fontSize: 22, fontWeight: 800, color: "#f9fafb" }}>
-          Sift<span style={{ color: "#34d399" }}>Tools</span>
+          SiftTools
         </span>
         <span style={{ fontSize: 16, color: "#6b7280", marginLeft: 16, fontWeight: 600 }}>
           COMPARISON
@@ -67,7 +67,7 @@ export default async function OGImage({
             width: 80,
             height: 80,
             borderRadius: 40,
-            background: "#059669",
+            background: "#374151",
             alignItems: "center",
             justifyContent: "center",
             flexShrink: 0,
@@ -86,8 +86,8 @@ export default async function OGImage({
       {/* Winner + URL */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         {meta.winner && (
-          <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 16px", background: "#065f46", borderRadius: 12 }}>
-            <span style={{ fontSize: 16, color: "#34d399", fontWeight: 700 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 16px", background: "#1f2937", borderRadius: 12 }}>
+            <span style={{ fontSize: 16, color: "#d1d5db", fontWeight: 700 }}>
               Winner: {meta.winner}
             </span>
           </div>

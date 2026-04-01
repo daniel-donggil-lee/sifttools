@@ -8,27 +8,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center">
                 <span className="text-white text-sm font-black">S</span>
               </div>
               <span className="text-xl font-extrabold text-white tracking-tight">
-                Sift<span className="text-emerald-400">Tools</span>
+                SiftTools
               </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed max-w-xs">
-              Independent AI tool reviews. Every recommendation is backed by
-              hands-on testing and honest evaluation.
+              AI tool reviews, comparisons, and guides.
             </p>
-            <div className="mt-5 flex items-center gap-5 text-xs text-gray-500">
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                Independent
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                No Sponsored Rankings
-              </span>
-            </div>
           </div>
 
           <div>

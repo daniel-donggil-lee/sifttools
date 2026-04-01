@@ -6,18 +6,18 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-200/50">
       <div className="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5">
-          <div className="w-9 h-9 bg-emerald-600 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-600/20">
+          <div className="w-9 h-9 bg-gray-900 rounded-xl flex items-center justify-center">
             <span className="text-white text-base font-black tracking-tight">S</span>
           </div>
           <span className="text-[1.375rem] font-extrabold tracking-tight text-gray-900">
-            Sift<span className="text-emerald-600">Tools</span>
+            SiftTools
           </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-0.5">
           <Link
             href="/finder"
-            className="relative px-3.5 py-2 text-[0.8125rem] font-semibold text-emerald-600 hover:text-emerald-700 transition-colors duration-200"
+            className="relative px-3.5 py-2 text-[0.8125rem] font-semibold text-gray-900 hover:text-gray-700 transition-colors duration-200"
           >
             Tool Finder
           </Link>

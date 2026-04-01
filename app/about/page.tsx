@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About SiftTools",
   description:
-    "SiftTools provides honest, in-depth reviews of AI tools to help you make better decisions.",
+    "SiftTools reviews AI tools with honest analysis, pricing breakdowns, and side-by-side comparisons.",
 };
 
 export default function AboutPage() {
@@ -15,39 +15,36 @@ export default function AboutPage() {
 
       <div className="prose max-w-none">
         <p>
-          The AI tool landscape is overwhelming. New products launch every day,
-          each claiming to be the best. How do you decide what&#39;s actually
-          worth your time and money?
+          SiftTools is an AI tool review site. We cover writing assistants,
+          image generators, video tools, coding helpers, and more — with
+          detailed breakdowns of features, pricing, and trade-offs.
         </p>
         <p>
-          That&#39;s where SiftTools comes in. We test AI tools hands-on and
-          write honest, detailed reviews. No fluff, no hype — just clear
-          analysis of what works, what doesn&#39;t, and who each tool is best
-          for.
+          Each review includes a scoring rubric, pricing tables, and
+          comparisons to similar tools so you can make an informed choice.
         </p>
 
-        <h2>What We Cover</h2>
+        <h2>What You&apos;ll Find Here</h2>
         <ul>
           <li>
-            <strong>In-depth reviews</strong> — Features, pricing, pros, cons,
-            and our verdict.
+            <strong>Reviews</strong> — Features, pricing, pros and cons.
           </li>
           <li>
-            <strong>Head-to-head comparisons</strong> — Side-by-side breakdowns
-            to help you choose.
+            <strong>Comparisons</strong> — Side-by-side breakdowns of
+            competing tools.
           </li>
           <li>
-            <strong>Category guides</strong> — Best tools for writing, image
-            generation, video, coding, and more.
+            <strong>Tool Finder</strong> — A quick quiz to match you with
+            the right tool.
           </li>
         </ul>
 
         <h2>Affiliate Disclosure</h2>
         <p>
-          Some links on this site are affiliate links. This means we may earn a
-          commission if you sign up through our link, at no extra cost to you.
-          This helps us keep the site running and free to use. Our reviews are
-          always honest regardless of affiliate relationships.
+          Some links on this site are affiliate links. If you sign up through
+          one, we may earn a commission at no extra cost to you. This helps
+          keep the site running. Affiliate relationships do not affect our
+          ratings or rankings.
         </p>
       </div>
     </div>

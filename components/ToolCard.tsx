@@ -16,11 +16,11 @@ export default function ToolCard({ tool }: { tool: ToolReview }) {
   return (
     <Link
       href={`/tools/${tool.slug}`}
-      className="group block bg-white rounded-2xl border border-gray-200/80 p-6 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1"
+      className="group block bg-white rounded-2xl border border-gray-200/80 p-6 hover:border-gray-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
     >
       <div className="flex items-start gap-4">
         {domain && (
-          <div className="shrink-0 w-14 h-14 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden group-hover:border-emerald-200 transition-colors">
+          <div className="shrink-0 w-14 h-14 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden group-hover:border-gray-200 transition-colors">
             <img
               src={`https://www.google.com/s2/favicons?domain=${domain}&sz=64`}
               alt={tool.title}
@@ -31,7 +31,7 @@ export default function ToolCard({ tool }: { tool: ToolReview }) {
           </div>
         )}
         <div className="flex-1 min-w-0">
-          <h3 className="font-bold text-gray-900 group-hover:text-emerald-700 transition-colors text-[0.9375rem] leading-snug">
+          <h3 className="font-bold text-gray-900 group-hover:text-gray-700 transition-colors text-[0.9375rem] leading-snug">
             {tool.title}
           </h3>
           <p className="mt-1.5 text-sm text-gray-400 line-clamp-2 leading-relaxed">

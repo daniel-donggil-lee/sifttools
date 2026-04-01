@@ -59,13 +59,13 @@ export default function ToolHero({ meta }: { meta: ToolReview }) {
         <div className="mt-8 pt-8 border-t border-gray-100 grid grid-cols-1 md:grid-cols-2 gap-6">
           {meta.pros && (
             <div>
-              <h3 className="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-3">
+              <h3 className="text-xs font-bold text-gray-900 uppercase tracking-wider mb-3">
                 What we like
               </h3>
               <ul className="space-y-2">
                 {meta.pros.map((pro) => (
                   <li key={pro} className="text-sm text-gray-700 flex items-start gap-2.5">
-                    <span className="shrink-0 w-5 h-5 bg-emerald-100 text-emerald-600 rounded-md flex items-center justify-center text-xs font-bold mt-0.5">+</span>
+                    <span className="shrink-0 w-5 h-5 bg-gray-100 text-gray-600 rounded-md flex items-center justify-center text-xs font-bold mt-0.5">+</span>
                     <span className="leading-snug">{pro}</span>
                   </li>
                 ))}

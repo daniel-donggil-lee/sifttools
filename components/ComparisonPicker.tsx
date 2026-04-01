@@ -70,7 +70,7 @@ export default function ComparisonPicker({
         <select
           value={toolA}
           onChange={(e) => setToolA(e.target.value)}
-          className="w-full sm:w-48 px-4 py-3 bg-gray-800 text-white rounded-xl border border-gray-700 text-sm font-medium focus:outline-none focus:border-emerald-500 transition-colors"
+          className="w-full sm:w-48 px-4 py-3 bg-gray-800 text-white rounded-xl border border-gray-700 text-sm font-medium focus:outline-none focus:border-gray-500 transition-colors"
         >
           <option value="">Select tool...</option>
           {tools.map((t) => (
@@ -85,7 +85,7 @@ export default function ComparisonPicker({
         <select
           value={toolB}
           onChange={(e) => setToolB(e.target.value)}
-          className="w-full sm:w-48 px-4 py-3 bg-gray-800 text-white rounded-xl border border-gray-700 text-sm font-medium focus:outline-none focus:border-emerald-500 transition-colors"
+          className="w-full sm:w-48 px-4 py-3 bg-gray-800 text-white rounded-xl border border-gray-700 text-sm font-medium focus:outline-none focus:border-gray-500 transition-colors"
         >
           <option value="">Select tool...</option>
           {tools.map((t) => (
@@ -100,7 +100,7 @@ export default function ComparisonPicker({
           disabled={!hasComparison}
           className={`px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 ${
             hasComparison
-              ? "bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-600/20 hover:-translate-y-0.5"
+              ? "bg-gray-100 hover:bg-white text-gray-900 font-bold hover:-translate-y-0.5"
               : "bg-gray-700 text-gray-500 cursor-not-allowed"
           }`}
         >

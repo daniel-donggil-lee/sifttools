@@ -46,7 +46,6 @@ export default async function CategoryPage({ params }: Props) {
   return (
     <div className="max-w-6xl mx-auto px-6 py-16">
       <div className="mb-10">
-        <span className="text-4xl mb-3 block">{category.icon}</span>
         <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight">
           Best {category.name} Tools
         </h1>
@@ -88,16 +87,16 @@ export default async function CategoryPage({ params }: Props) {
               <Link
                 key={comp.slug}
                 href={`/compare/${comp.slug}`}
-                className="group block bg-white rounded-2xl border border-gray-200/80 p-6 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1"
+                className="group block bg-white rounded-2xl border border-gray-200/80 p-6 hover:border-gray-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
               >
-                <h3 className="font-bold text-gray-900 group-hover:text-emerald-700 transition-colors">
+                <h3 className="font-bold text-gray-900 group-hover:text-gray-700 transition-colors">
                   {comp.title}
                 </h3>
                 <p className="mt-2 text-sm text-gray-400 leading-relaxed">
                   {comp.description}
                 </p>
                 {comp.winner && (
-                  <div className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200/50">
+                  <div className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-gray-700 bg-gray-100 px-3 py-1.5 rounded-lg border border-gray-200">
                     Winner: {comp.winner}
                   </div>
                 )}

@@ -23,9 +23,6 @@ export default function FinderPage() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">
       <div className="text-center mb-12">
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/60 text-emerald-700 text-xs font-semibold tracking-wide uppercase mb-6">
-          Interactive
-        </span>
         <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
           Find Your Perfect AI Tool
         </h1>

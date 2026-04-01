@@ -20,42 +20,42 @@ const STEPS = [
     question: "What do you need AI for?",
     key: "category" as const,
     options: [
-      { value: "Writing", label: "Writing & Copy", icon: "✏️" },
-      { value: "Image", label: "Image & Design", icon: "🎨" },
-      { value: "Video", label: "Video Creation", icon: "🎬" },
-      { value: "Audio", label: "Audio & Voice", icon: "🎙️" },
-      { value: "Coding", label: "Coding", icon: "💻" },
-      { value: "Productivity", label: "Productivity", icon: "⚡" },
-      { value: "Chatbot", label: "AI Chatbot", icon: "🤖" },
+      { value: "Writing", label: "Writing & Copy" },
+      { value: "Image", label: "Image & Design" },
+      { value: "Video", label: "Video Creation" },
+      { value: "Audio", label: "Audio & Voice" },
+      { value: "Coding", label: "Coding" },
+      { value: "Productivity", label: "Productivity" },
+      { value: "Chatbot", label: "AI Chatbot" },
     ],
   },
   {
     question: "What's your budget?",
     key: "budget" as const,
     options: [
-      { value: "free", label: "Free only", icon: "🆓" },
-      { value: "budget", label: "Under $30/mo", icon: "💰" },
-      { value: "premium", label: "$30+/mo", icon: "💎" },
-      { value: "any", label: "No limit", icon: "🚀" },
+      { value: "free", label: "Free only" },
+      { value: "budget", label: "Under $30/mo" },
+      { value: "premium", label: "$30+/mo" },
+      { value: "any", label: "No limit" },
     ],
   },
   {
     question: "Team size?",
     key: "team" as const,
     options: [
-      { value: "solo", label: "Just me", icon: "👤" },
-      { value: "small", label: "Small team", icon: "👥" },
-      { value: "enterprise", label: "Enterprise", icon: "🏢" },
+      { value: "solo", label: "Just me" },
+      { value: "small", label: "Small team" },
+      { value: "enterprise", label: "Enterprise" },
     ],
   },
   {
     question: "What matters most?",
     key: "strength" as const,
     options: [
-      { value: "quality", label: "Output quality", icon: "✨" },
-      { value: "speed", label: "Speed", icon: "⚡" },
-      { value: "ease", label: "Ease of use", icon: "🎯" },
-      { value: "integration", label: "Integrations", icon: "🔗" },
+      { value: "quality", label: "Output quality" },
+      { value: "speed", label: "Speed" },
+      { value: "ease", label: "Ease of use" },
+      { value: "integration", label: "Integrations" },
     ],
   },
 ];
@@ -80,26 +80,21 @@ function scoreTools(tools: ToolData[], answers: Answers): ToolData[] {
     .map((tool) => {
       let score = 0;
 
-      // Category match (must match)
       if (answers.category && tool.category !== answers.category && tool.category !== "SEO") {
         return { tool, score: -1 };
       }
       if (answers.category === "Writing" && tool.category === "SEO") {
-        score += 2; // SEO is related to writing
+        score += 2;
       }
       if (tool.category === answers.category) score += 10;
 
-      // Budget match
       if (answers.budget && answers.budget !== "any") {
         if (answers.budget === "free" && tool.budget_tier === "free") score += 5;
         else if (answers.budget === "budget" && (tool.budget_tier === "free" || tool.budget_tier === "budget")) score += 4;
         else if (answers.budget === "premium") score += 3;
       }
 
-      // Team size match
       if (answers.team && tool.team_size.includes(answers.team)) score += 4;
-
-      // Strength match
       if (answers.strength && tool.strengths.includes(answers.strength)) score += 5;
 
       return { tool, score };
@@ -135,13 +130,13 @@ export default function ToolFinder({ tools }: { tools: ToolData[] }) {
   if (showResults) {
     const results = scoreTools(tools, answers);
     return (
-      <div className="animate-fade-in-up">
+      <div>
         <div className="text-center mb-8">
           <h2 className="text-2xl font-extrabold text-gray-900 tracking-tight">
-            Your perfect matches
+            Your top matches
           </h2>
-          <p className="mt-2 text-gray-400 font-medium">
-            Based on your preferences, we recommend:
+          <p className="mt-2 text-gray-400 text-sm">
+            Based on your preferences
           </p>
         </div>
 
@@ -153,10 +148,10 @@ export default function ToolFinder({ tools }: { tools: ToolData[] }) {
               <Link
                 key={tool.id}
                 href={`/tools/${slug}`}
-                className="group relative block bg-white rounded-2xl border border-gray-200/80 p-6 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1"
+                className="group relative block bg-white rounded-2xl border border-gray-200/80 p-6 hover:border-gray-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
               >
                 {i === 0 && (
-                  <div className="absolute -top-3 left-6 px-3 py-1 bg-emerald-600 text-white text-xs font-bold rounded-full shadow-lg shadow-emerald-600/20">
+                  <div className="absolute -top-3 left-6 px-3 py-1 bg-gray-900 text-white text-xs font-bold rounded-full">
                     Best Match
                   </div>
                 )}
@@ -173,7 +168,7 @@ export default function ToolFinder({ tools }: { tools: ToolData[] }) {
                     </div>
                   )}
                   <div>
-                    <h3 className="font-bold text-gray-900 group-hover:text-emerald-700 transition-colors">
+                    <h3 className="font-bold text-gray-900 group-hover:text-gray-700 transition-colors">
                       {tool.name}
                     </h3>
                     <span className="text-xs text-gray-400 font-medium">{tool.pricing}</span>
@@ -182,8 +177,8 @@ export default function ToolFinder({ tools }: { tools: ToolData[] }) {
                 <p className="text-sm text-gray-500 leading-relaxed">
                   {tool.description}
                 </p>
-                <div className="mt-4 text-emerald-600 text-sm font-semibold group-hover:underline">
-                  Read full review →
+                <div className="mt-4 text-gray-900 text-sm font-semibold">
+                  Read review →
                 </div>
               </Link>
             );
@@ -211,21 +206,21 @@ export default function ToolFinder({ tools }: { tools: ToolData[] }) {
   const currentStep = STEPS[step];
 
   return (
-    <div className="animate-fade-in-up">
+    <div>
       {/* Progress */}
       <div className="flex items-center gap-2 mb-8">
         {STEPS.map((_, i) => (
           <div
             key={i}
             className={`h-1.5 flex-1 rounded-full transition-colors duration-300 ${
-              i <= step ? "bg-emerald-500" : "bg-gray-200"
+              i <= step ? "bg-gray-900" : "bg-gray-200"
             }`}
           />
         ))}
       </div>
 
       <div className="text-center mb-8">
-        <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider">
+        <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">
           Step {step + 1} of {STEPS.length}
         </span>
         <h2 className="mt-2 text-2xl font-extrabold text-gray-900 tracking-tight">
@@ -238,10 +233,9 @@ export default function ToolFinder({ tools }: { tools: ToolData[] }) {
           <button
             key={opt.value}
             onClick={() => handleAnswer(currentStep.key, opt.value)}
-            className="group flex flex-col items-center gap-3 p-6 bg-white rounded-2xl border border-gray-200 hover:border-emerald-300 hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-200 hover:-translate-y-0.5"
+            className="group flex flex-col items-center justify-center gap-2 p-6 bg-white rounded-2xl border border-gray-200 hover:border-gray-400 hover:shadow-md transition-all duration-200 hover:-translate-y-0.5"
           >
-            <span className="text-3xl">{opt.icon}</span>
-            <span className="text-sm font-semibold text-gray-700 group-hover:text-emerald-700 transition-colors">
+            <span className="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors">
               {opt.label}
             </span>
           </button>

@@ -42,7 +42,7 @@ export default function VersusCard({ meta }: { meta: Comparison }) {
             <span className="text-xs text-gray-400 font-medium">{dataA.meta.price}</span>
           )}
           {meta.winner === toolA && (
-            <span className="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full border border-emerald-200/50">
+            <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-bold rounded-full border border-gray-200">
               Winner
             </span>
           )}
@@ -71,7 +71,7 @@ export default function VersusCard({ meta }: { meta: Comparison }) {
             <span className="text-xs text-gray-400 font-medium">{dataB.meta.price}</span>
           )}
           {meta.winner === toolB && (
-            <span className="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full border border-emerald-200/50">
+            <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-bold rounded-full border border-gray-200">
               Winner
             </span>
           )}
