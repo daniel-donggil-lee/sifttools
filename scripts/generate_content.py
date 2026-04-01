@@ -99,18 +99,57 @@ CATEGORY_MAP = {
 }
 
 REVIEW_PROMPT = """You are writing an AI tool review for SiftTools.com.
+Follow the editorial standards below exactly. Violating any rule = rejected draft.
 
-Your writing style:
-- Third person, informational tone — NOT first person
-- Specific and direct — never vague or promotional
-- Include exact numbers (pricing tiers, limits, export formats)
-- Compare to competitors by name where relevant
-- Short paragraphs, scannable, no filler
-- NO fake personal experiences ("I tested for 6 months", "I switched to...")
-- NO Reddit quotes or YouTube embeds
-- NO phrases like "In today's rapidly evolving...", "Whether you're a...", "In conclusion..."
+═══ VOICE ═══
+Editor's voice. Opinionated but NEVER first person.
+- BANNED: I, my, me, we, our, us — zero occurrences allowed
+- BANNED: "I tested", "In my experience", "my client", "my workflow", "I switched"
+- GOOD: "Jasper's Brand Voice feature reproduces tone with ~85% accuracy from 4,000 words of training data."
+- GOOD: "The free plan is generous, but the 40k word cap will frustrate agencies producing 10+ posts per month."
+The writer has studied the tool thoroughly and states opinions, but never claims personal usage.
 
-Tool info:
+═══ ABSOLUTE DON'TS ═══
+- Fake usage duration ("After 6 months of daily use...")
+- Fake client stories ("landed a client $2.3M in funding")
+- Fake metrics from experience ("I generated 200+ videos")
+- Reddit/Twitter/YouTube quotes or embeds
+- AI filler: "In today's rapidly evolving...", "Whether you're a...", "When it comes to...", "In conclusion..."
+- Defensive trust claims: "No hype", "honest review", "we're independent"
+- Superlatives without evidence: "the most powerful", "absolutely incredible"
+- Weasel words: "relatively", "fairly", "quite"
+- Marketing tone: "supercharge your workflow", "take your content to the next level"
+- Transition filler: "Now let's look at...", "Moving on to..."
+- Emoji anywhere in the text
+
+═══ REQUIRED ELEMENTS ═══
+1. All prices/specs must be verifiable from the tool's official site or docs
+2. Pricing table with every plan, price, key features, and a value judgment
+3. At least 2 competitors named and compared on specific dimensions
+4. At least 3 specific, honest cons with plan names or limits
+5. Clear "Best for" and "Skip if" recommendations — no hedging
+
+═══ STRUCTURE ═══
+Pick 5-7 sections from this menu. VARY the order — do NOT start with Overview every time.
+Vary section titles too ("What $30/mo Gets You" instead of always "Pricing Breakdown").
+
+Section menu:
+- Overview — What it does, who it's for. 2 paragraphs max.
+- Key Features — 3-4 features. ### subheadings with actual feature names.
+- What's Missing — 1-2 specific gaps.
+- Pricing Breakdown — Table + 1 paragraph value analysis vs competitor pricing.
+- Best For / Skip If — Bullet lists of specific personas/situations.
+- vs [Competitor] — Head-to-head on 2-3 dimensions. Name a winner per dimension.
+- Use Cases — 2-3 specific workflows. Describe the task, not a personal anecdote.
+- Bottom Line — 1-2 paragraphs with a direct recommendation.
+
+═══ TONE CALIBRATION ═══
+- Short paragraphs (3-4 sentences max)
+- Concrete nouns and numbers over adjectives
+- State trade-offs directly: "Faster than DALL-E 3, but no inpainting"
+- No section should repeat information from another section
+
+═══ TOOL INFO ═══
 - Name: {name}
 - Category: {category}
 - URL: {url}
@@ -121,50 +160,38 @@ Tool info:
 TARGET KEYWORD: "{keyword}"
 Use it naturally in the title, first paragraph, and 2-3 subheadings.
 
-IMPORTANT: Vary the section structure for each review. Do NOT use the same section order every time.
-Pick 5-7 sections from the options below and arrange them in an order that makes sense for this specific tool:
-
+═══ OUTPUT FORMAT ═══
 Output EXACTLY this MDX format. No text before or after:
 
 ---
-title: "{name} Review 2026: [Subtitle that includes target keyword naturally]"
-description: "[SEO meta description 150-160 chars, includes target keyword]"
-rating: [Honest rating 3.0-5.0 — 4.0+ means genuinely good, 3.x means decent with caveats]
+title: "{name} Review 2026: [Specific angle, not generic hype]"
+description: "[150-160 chars SEO meta, includes target keyword]"
+rating: [3.0-5.0 — 4.0+ means genuinely good, 3.x means decent with caveats]
 price: "{pricing}"
 affiliateUrl: "{affiliate_url}"
 category: "{category_slug}"
 publishedAt: "{today}"
 image: "/images/{slug}.png"
 pros:
-  - "[Specific pro with a number or comparison]"
-  - "[Pro 2 — mention a specific feature name]"
+  - "[Specific — include a number or feature name]"
+  - "[Pro 2]"
   - "[Pro 3]"
   - "[Pro 4]"
 cons:
-  - "[Honest con — e.g. 'No API access on the $49/mo plan']"
-  - "[Con 2 — mention a specific limitation]"
+  - "[Specific — include plan name or limit, e.g. 'No API on the $49/mo plan']"
+  - "[Con 2]"
   - "[Con 3]"
-verdict: "[2 sentences: who it's best for and one specific reason why. Be direct.]"
+verdict: "[2 sentences: who + one specific reason. No hedging.]"
 ---
 
-SECTION OPTIONS (pick 5-7, vary the order):
+[Review body: 1200-1800 words, 5-7 sections from the menu above]
 
-- **Overview** — What {name} does, who it's for, how it compares at a high level. 2 short paragraphs.
-- **Key Features** — 3-4 features with specific details. Use ### subheadings with actual feature names.
-- **What's Missing** — 1-2 features the tool lacks. Be specific.
-- **Pricing Breakdown** — Table with plans, prices, key features, and a brief take on value.
-- **Who It's For / Who Should Skip It** — Bullet lists of good-fit and bad-fit scenarios.
-- **How It Compares to [Competitor]** — Direct comparison on 2-3 dimensions.
-- **Use Cases** — 2-3 specific workflows where this tool excels.
-- **Bottom Line** — 1-2 paragraphs with a clear recommendation.
-
-CRITICAL RULES:
-- Do NOT simulate personal experience. Write factual analysis.
-- Do NOT include Reddit quotes or YouTube sections.
-- Include at least 3 specific numbers/metrics throughout the review.
-- Mention at least 2 competitor tools by name for comparison.
-- Keep total length 1200-1800 words.
-- Every section must add unique value — no repeating the same point.
+═══ FINAL CHECK ═══
+Before outputting, verify:
+- Zero first-person pronouns (I/my/me/we/our)
+- Zero fake anecdotes or usage claims
+- All numbers are from official sources, not invented
+- Section order differs from a generic template
 """
 
 KEYWORDS = {
