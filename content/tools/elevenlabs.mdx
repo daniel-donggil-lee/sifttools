@@ -9,12 +9,12 @@ publishedAt: "2026-03-31"
 image: "/images/elevenlabs.png"
 pros:
   - "Voice output quality indistinguishable from human speech in blind tests"
-  - "Voice cloning from just 3-5 minutes of sample audio on Creator plan ($22/mo)"
+  - "Voice cloning from just 3-5 minutes of sample audio, available from Starter plan ($5/mo)"
   - "29 languages with native-level pronunciation and adjustable emotion"
-  - "API handles 500+ requests per minute on Pro plan for production workloads"
+  - "API handles 500+ requests per minute on Scale plan for production workloads"
 cons:
   - "Free plan capped at 10,000 characters/month (roughly 15 minutes of audio)"
-  - "Voice cloning requires Creator plan at $22/mo minimum"
+  - "Professional voice cloning quality requires Creator plan at $22/mo minimum"
   - "No SSML support for granular control over pauses, emphasis, and breathing"
 verdict: "The best text-to-speech engine available for content creators, audiobook producers, and app developers who need human-quality audio. The $22/mo Creator plan is the sweet spot."
 ---
@@ -27,7 +27,7 @@ The text-to-speech market splits into three tiers: enterprise APIs (Amazon Polly
 
 **Murf** charges $29/month for 48 hours of generation time with 120+ voices. The interface is polished, and the voices are decent for corporate explainer videos. However, Murf lacks voice cloning entirely, and its emotional range is noticeably narrower than ElevenLabs.
 
-**ElevenLabs** at $22/month (Creator plan) delivers 500,000 characters of generation, voice cloning, and commercial licensing. The audio quality gap is immediately audible: ElevenLabs voices carry natural breathing patterns, micro-pauses, and tonal shifts that Polly and Murf cannot reproduce. For any use case where listeners will spend more than 30 seconds paying attention, this quality difference matters.
+**ElevenLabs** at $22/month (Creator plan) delivers 100,000 characters of generation, voice cloning, and commercial licensing. The audio quality gap is immediately audible: ElevenLabs voices carry natural breathing patterns, micro-pauses, and tonal shifts that Polly and Murf cannot reproduce. For any use case where listeners will spend more than 30 seconds paying attention, this quality difference matters.
 
 | Dimension | ElevenLabs (Creator) | Amazon Polly (Neural) | Murf (Creator) |
 |-----------|---------------------|----------------------|----------------|
@@ -43,7 +43,7 @@ ElevenLabs builds a digital replica of any voice from 3-5 minutes of clean audio
 
 Practical applications include: podcast hosts generating episode segments without recording sessions, e-learning platforms maintaining a consistent narrator voice across hundreds of lessons, and accessibility tools reading content in a familiar voice rather than a generic synthetic one.
 
-The cloning feature requires the Creator plan ($22/month) at minimum. The free and Starter plans ($5/month) provide access to the pre-built voice library only. This pricing gate makes sense --- voice cloning is the premium capability that separates ElevenLabs from every free TTS tool.
+Voice cloning is now available starting from the Starter plan ($5/month), which includes instant voice cloning from short samples. The Creator plan ($22/month) unlocks professional voice cloning with higher fidelity from longer audio samples. The free plan provides access to the pre-built voice library only.
 
 ## Key Features Beyond Cloning
 
@@ -57,19 +57,19 @@ The platform supports 29 languages. Spanish, German, and Portuguese outputs soun
 
 ### API and Developer Access
 
-The REST API supports real-time streaming and batch processing. The Pro plan ($99/month) handles 500+ concurrent requests, making it viable for production applications like interactive voice response systems or real-time game dialogue. Latency runs 200-400ms for standard generation, under 100ms for the streaming endpoint with a Turbo model.
+The REST API supports real-time streaming and batch processing. The Scale plan ($330/month) handles 500+ concurrent requests, making it viable for production applications like interactive voice response systems or real-time game dialogue. Latency runs 200-400ms for standard generation, under 100ms for the streaming endpoint with a Turbo model.
 
 ## Pricing: Every Plan Evaluated
 
 | Plan | Price | Characters/Month | Key Features | Who Should Buy |
 |------|-------|-----------------|--------------|----------------|
 | Free | $0 | 10,000 | 3 custom voices, non-commercial | Testing only |
-| Starter | $5/mo | 30,000 | Commercial license, 10 voices | Hobbyists, light personal use |
-| Creator | $22/mo | 500,000 | Voice cloning, commercial license | Content creators, small businesses |
-| Pro | $99/mo | 2,000,000 | Priority processing, high API limits | Studios, app developers |
-| Scale | $330/mo | 11,000,000 | Dedicated support, enterprise features | Agencies, enterprise audio production |
+| Starter | $5/mo | 30,000 | Instant voice cloning, commercial license, 10 voices | Hobbyists, light personal use |
+| Creator | $22/mo | 100,000 | Professional voice cloning, commercial license | Content creators, small businesses |
+| Pro | $99/mo | 500,000 | Priority processing, high API limits | Studios, app developers |
+| Scale | $330/mo | 2,000,000 | Dedicated support, enterprise features | Agencies, enterprise audio production |
 
-The Creator plan at $22/month is the inflection point where ElevenLabs becomes a serious production tool. Below that tier, the character limits are too tight for regular content production (30,000 characters equals roughly 45 minutes of audio). Above it, the Pro plan makes sense only for teams processing dozens of hours of audio monthly.
+The Creator plan at $22/month is the inflection point where ElevenLabs becomes a serious production tool. Below that tier, the character limits are too tight for regular content production (30,000 characters on Starter equals roughly 45 minutes of audio). The Starter plan at $5/month now includes instant voice cloning, making it a strong entry point for hobbyists. Above Creator, the Pro plan at 500,000 characters makes sense for teams processing dozens of hours of audio monthly.
 
 Compared to hiring voice talent at $200-500 per finished hour of audio, even the Pro plan pays for itself within 2-3 projects.
 
