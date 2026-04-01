@@ -1,33 +1,88 @@
 import Hero from "@/components/Hero";
 import ToolCard from "@/components/ToolCard";
+import ComparisonPicker from "@/components/ComparisonPicker";
 import { getAllTools, getAllComparisons } from "@/lib/mdx";
 import { CATEGORIES } from "@/lib/types";
 import Link from "next/link";
+import fs from "fs";
+import path from "path";
+
+function getToolsDb() {
+  const raw = fs.readFileSync(
+    path.join(process.cwd(), "data/tools_db.json"),
+    "utf-8"
+  );
+  return JSON.parse(raw).tools;
+}
 
 export default function Home() {
   const tools = getAllTools();
   const comparisons = getAllComparisons();
+  const toolsDb = getToolsDb();
+
+  // Count reviews per category
+  const categoryCount: Record<string, number> = {};
+  tools.forEach((t) => {
+    const cat = t.category.toLowerCase();
+    categoryCount[cat] = (categoryCount[cat] || 0) + 1;
+  });
 
   return (
     <>
       <Hero />
 
+      {/* Tool Finder CTA */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6 py-10">
+          <Link
+            href="/finder"
+            className="group block bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-200/60 p-8 hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300"
+          >
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-2xl">🔍</span>
+                  <span className="px-2.5 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full">
+                    Interactive
+                  </span>
+                </div>
+                <h2 className="text-xl font-extrabold text-gray-900 tracking-tight">
+                  Not sure which tool to pick?
+                </h2>
+                <p className="mt-1 text-gray-500 text-sm font-medium">
+                  Answer 4 quick questions and get a personalized recommendation.
+                </p>
+              </div>
+              <div className="shrink-0 px-6 py-3 bg-gray-900 text-white font-semibold rounded-xl text-sm group-hover:bg-gray-800 transition-colors shadow-lg shadow-gray-900/10">
+                Find My Tool →
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* Categories */}
       <section className="bg-white border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-14">
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-            {CATEGORIES.map((cat) => (
-              <Link
-                key={cat.slug}
-                href={`/categories/${cat.slug}`}
-                className="group flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-emerald-50 border border-transparent hover:border-emerald-200/60 transition-all duration-200"
-              >
-                <span className="text-2xl">{cat.icon}</span>
-                <span className="text-xs font-semibold text-gray-500 group-hover:text-emerald-700 transition-colors text-center">
-                  {cat.name}
-                </span>
-              </Link>
-            ))}
+            {CATEGORIES.map((cat) => {
+              const count = categoryCount[cat.slug] || 0;
+              return (
+                <Link
+                  key={cat.slug}
+                  href={`/categories/${cat.slug}`}
+                  className="group flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-emerald-50 border border-transparent hover:border-emerald-200/60 transition-all duration-200"
+                >
+                  <span className="text-2xl">{cat.icon}</span>
+                  <span className="text-xs font-semibold text-gray-500 group-hover:text-emerald-700 transition-colors text-center">
+                    {cat.name}
+                  </span>
+                  <span className="text-[10px] font-medium text-gray-300">
+                    {count > 0 ? `${count} reviewed` : "coming soon"}
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -52,6 +107,22 @@ export default function Home() {
             ))}
           </div>
         )}
+      </section>
+
+      {/* Comparison Picker */}
+      <section className="max-w-6xl mx-auto px-6 pb-10">
+        <ComparisonPicker
+          tools={toolsDb.map((t: { id: string; name: string; category: string; url: string }) => ({
+            id: t.id,
+            name: t.name,
+            category: t.category,
+            url: t.url,
+          }))}
+          comparisons={comparisons.map((c) => ({
+            slug: c.slug,
+            tools: c.tools,
+          }))}
+        />
       </section>
 
       {/* Comparisons */}

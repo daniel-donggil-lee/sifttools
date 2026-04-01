@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getComparisonBySlug, getAllComparisons } from "@/lib/mdx";
+import VersusCard from "@/components/VersusCard";
 import type { Metadata } from "next";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -27,16 +28,12 @@ export default async function ComparePage({ params }: Props) {
   const { meta, content } = comp;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <span className="text-xs text-gray-400 uppercase tracking-wide">
-        Comparison
-      </span>
-      <h1 className="text-3xl font-bold text-gray-900 mt-1 mb-6">
-        {meta.title}
-      </h1>
-      <div className="prose max-w-none">
+    <div className="max-w-4xl mx-auto px-6 py-12">
+      <VersusCard meta={meta} />
+
+      <article className="prose max-w-none">
         <MDXRemote source={content} />
-      </div>
+      </article>
     </div>
   );
 }

@@ -1,6 +1,10 @@
 import Link from "next/link";
+import { getAllTools, getAllComparisons } from "@/lib/mdx";
 
 export default function Hero() {
+  const toolCount = getAllTools().length;
+  const compCount = getAllComparisons().length;
+
   return (
     <section className="relative overflow-hidden bg-white border-b border-gray-100">
       {/* Subtle gradient mesh */}
@@ -29,24 +33,24 @@ export default function Hero() {
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
-            href="#reviews"
+            href="/finder"
             className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-xl transition-all duration-200 shadow-xl shadow-gray-900/10 hover:shadow-gray-900/20 text-[0.9375rem]"
           >
-            Browse Reviews
+            Find My Perfect Tool
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
           </Link>
           <Link
-            href="/about"
+            href="#reviews"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-xl border border-gray-200 transition-all duration-200 text-[0.9375rem]"
           >
-            How we review
+            Browse Reviews
           </Link>
         </div>
 
         <div className="mt-16 flex items-center justify-center gap-8 md:gap-12">
           {[
-            { num: "20+", label: "Tools Reviewed" },
-            { num: "8", label: "Categories" },
+            { num: `${toolCount}`, label: "Tools Reviewed" },
+            { num: `${compCount}`, label: "Comparisons" },
             { num: "100%", label: "Independent" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">

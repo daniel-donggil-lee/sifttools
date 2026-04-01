@@ -20,6 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sifttools.com"),
   title: {
     default: "SiftTools — Find the Best AI Tools",
     template: "%s | SiftTools",

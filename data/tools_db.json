@@ -9,7 +9,10 @@
       "affiliate_program": true,
       "priority": 1,
       "tags": ["ai-writing", "copywriting", "content-generation", "marketing"],
-      "description": "AI writing assistant for marketing teams and content creators"
+      "description": "AI writing assistant for marketing teams and content creators",
+      "budget_tier": "premium",
+      "team_size": ["small", "enterprise"],
+      "strengths": ["quality", "integration"]
     },
     {
       "id": "surfer-seo",
@@ -20,7 +23,10 @@
       "affiliate_program": true,
       "priority": 2,
       "tags": ["seo", "content-optimization", "keyword-research"],
-      "description": "AI-powered SEO tool for content optimization and keyword research"
+      "description": "AI-powered SEO tool for content optimization and keyword research",
+      "budget_tier": "premium",
+      "team_size": ["small", "enterprise"],
+      "strengths": ["quality", "integration"]
     },
     {
       "id": "copy-ai",
@@ -31,7 +37,10 @@
       "affiliate_program": true,
       "priority": 3,
       "tags": ["ai-writing", "copywriting", "sales-copy"],
-      "description": "AI copywriting tool for sales copy, blog posts, and social media"
+      "description": "AI copywriting tool for sales copy, blog posts, and social media",
+      "budget_tier": "free",
+      "team_size": ["solo", "small"],
+      "strengths": ["speed", "ease"]
     },
     {
       "id": "writesonic",
@@ -42,7 +51,10 @@
       "affiliate_program": true,
       "priority": 4,
       "tags": ["ai-writing", "blog-posts", "landing-pages"],
-      "description": "AI writer for blogs, ads, emails, and websites"
+      "description": "AI writer for blogs, ads, emails, and websites",
+      "budget_tier": "budget",
+      "team_size": ["solo", "small"],
+      "strengths": ["speed", "ease"]
     },
     {
       "id": "notion-ai",
@@ -53,7 +65,10 @@
       "affiliate_program": true,
       "priority": 5,
       "tags": ["productivity", "note-taking", "project-management", "ai-assistant"],
-      "description": "AI assistant integrated into Notion workspace"
+      "description": "AI assistant integrated into Notion workspace",
+      "budget_tier": "budget",
+      "team_size": ["solo", "small", "enterprise"],
+      "strengths": ["integration", "ease"]
     },
     {
       "id": "midjourney",
@@ -64,7 +79,10 @@
       "affiliate_program": false,
       "priority": 6,
       "tags": ["image-generation", "ai-art", "design"],
-      "description": "AI image generation tool for creating stunning artwork and visuals"
+      "description": "AI image generation tool for creating stunning artwork and visuals",
+      "budget_tier": "budget",
+      "team_size": ["solo", "small"],
+      "strengths": ["quality"]
     },
     {
       "id": "cursor",
@@ -75,7 +93,10 @@
       "affiliate_program": true,
       "priority": 7,
       "tags": ["coding", "ide", "ai-programming", "developer-tools"],
-      "description": "AI-first code editor built on VS Code"
+      "description": "AI-first code editor built on VS Code",
+      "budget_tier": "free",
+      "team_size": ["solo", "small"],
+      "strengths": ["speed", "quality"]
     },
     {
       "id": "claude",
@@ -86,7 +107,10 @@
       "affiliate_program": false,
       "priority": 8,
       "tags": ["chatbot", "ai-assistant", "reasoning", "coding"],
-      "description": "Anthropic's AI assistant known for safety and reasoning capabilities"
+      "description": "Anthropic's AI assistant known for safety and reasoning capabilities",
+      "budget_tier": "free",
+      "team_size": ["solo", "small", "enterprise"],
+      "strengths": ["quality", "ease"]
     },
     {
       "id": "runway-ml",
@@ -97,7 +121,10 @@
       "affiliate_program": true,
       "priority": 9,
       "tags": ["video-generation", "video-editing", "ai-video"],
-      "description": "AI-powered creative tools for video generation and editing"
+      "description": "AI-powered creative tools for video generation and editing",
+      "budget_tier": "budget",
+      "team_size": ["solo", "small"],
+      "strengths": ["quality", "speed"]
     },
     {
       "id": "descript",
@@ -108,7 +135,10 @@
       "affiliate_program": true,
       "priority": 10,
       "tags": ["video-editing", "podcast", "transcription", "screen-recording"],
-      "description": "AI-powered video and podcast editing platform"
+      "description": "AI-powered video and podcast editing platform",
+      "budget_tier": "budget",
+      "team_size": ["solo", "small"],
+      "strengths": ["ease", "integration"]
     },
     {
       "id": "synthesia",
@@ -119,7 +149,10 @@
       "affiliate_program": true,
       "priority": 11,
       "tags": ["ai-video", "avatar", "training-videos"],
-      "description": "AI video generation platform with realistic avatars"
+      "description": "AI video generation platform with realistic avatars",
+      "budget_tier": "budget",
+      "team_size": ["small", "enterprise"],
+      "strengths": ["speed", "ease"]
     },
     {
       "id": "elevenlabs",
@@ -130,7 +163,10 @@
       "affiliate_program": true,
       "priority": 12,
       "tags": ["text-to-speech", "voice-cloning", "ai-audio"],
-      "description": "AI voice generator and text-to-speech platform"
+      "description": "AI voice generator and text-to-speech platform",
+      "budget_tier": "free",
+      "team_size": ["solo", "small"],
+      "strengths": ["quality", "speed"]
     },
     {
       "id": "gamma",
@@ -141,7 +177,10 @@
       "affiliate_program": true,
       "priority": 13,
       "tags": ["presentations", "slides", "ai-design"],
-      "description": "AI-powered presentation and document creation tool"
+      "description": "AI-powered presentation and document creation tool",
+      "budget_tier": "free",
+      "team_size": ["solo", "small"],
+      "strengths": ["speed", "ease"]
     },
     {
       "id": "beautiful-ai",
@@ -152,7 +191,10 @@
       "affiliate_program": true,
       "priority": 14,
       "tags": ["presentations", "slides", "design"],
-      "description": "AI presentation software with smart templates"
+      "description": "AI presentation software with smart templates",
+      "budget_tier": "budget",
+      "team_size": ["small", "enterprise"],
+      "strengths": ["quality", "ease"]
     },
     {
       "id": "otter-ai",
@@ -163,7 +205,10 @@
       "affiliate_program": true,
       "priority": 15,
       "tags": ["transcription", "meeting-notes", "ai-assistant"],
-      "description": "AI meeting assistant for transcription and note-taking"
+      "description": "AI meeting assistant for transcription and note-taking",
+      "budget_tier": "free",
+      "team_size": ["solo", "small", "enterprise"],
+      "strengths": ["integration", "ease"]
     },
     {
       "id": "grammarly",
@@ -174,7 +219,10 @@
       "affiliate_program": true,
       "priority": 16,
       "tags": ["grammar", "writing-assistant", "proofreading"],
-      "description": "AI writing assistant for grammar, clarity, and style"
+      "description": "AI writing assistant for grammar, clarity, and style",
+      "budget_tier": "free",
+      "team_size": ["solo", "small", "enterprise"],
+      "strengths": ["quality", "integration", "ease"]
     },
     {
       "id": "canva-ai",
@@ -185,7 +233,10 @@
       "affiliate_program": true,
       "priority": 17,
       "tags": ["design", "image-generation", "templates"],
-      "description": "AI-powered design platform with Magic Studio features"
+      "description": "AI-powered design platform with Magic Studio features",
+      "budget_tier": "free",
+      "team_size": ["solo", "small", "enterprise"],
+      "strengths": ["ease", "speed"]
     },
     {
       "id": "adobe-firefly",
@@ -196,7 +247,10 @@
       "affiliate_program": true,
       "priority": 18,
       "tags": ["image-generation", "ai-art", "adobe", "design"],
-      "description": "Adobe's generative AI tool for image creation and editing"
+      "description": "Adobe's generative AI tool for image creation and editing",
+      "budget_tier": "free",
+      "team_size": ["solo", "small", "enterprise"],
+      "strengths": ["quality", "integration"]
     },
     {
       "id": "perplexity",
@@ -207,7 +261,10 @@
       "affiliate_program": true,
       "priority": 19,
       "tags": ["ai-search", "research", "chatbot"],
-      "description": "AI-powered search engine with cited answers"
+      "description": "AI-powered search engine with cited answers",
+      "budget_tier": "free",
+      "team_size": ["solo", "small"],
+      "strengths": ["speed", "quality"]
     },
     {
       "id": "pika",
@@ -218,7 +275,10 @@
       "affiliate_program": false,
       "priority": 20,
       "tags": ["video-generation", "ai-video", "animation"],
-      "description": "AI video generation tool for creating and editing videos"
+      "description": "AI video generation tool for creating and editing videos",
+      "budget_tier": "free",
+      "team_size": ["solo"],
+      "strengths": ["ease", "speed"]
     }
   ],
   "categories": [
