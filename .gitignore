@@ -38,6 +38,9 @@ yarn-error.log*
 __pycache__/
 *.pyc
 
+# Google credentials (local dev only — use GSC_CREDENTIALS_B64 env var in production)
+.gsc-key.json
+
 # vercel
 .vercel
 
