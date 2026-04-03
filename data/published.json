@@ -123,6 +123,10 @@
     {
       "tool_id": "pika",
       "published_at": "2026-04-01"
+    },
+    {
+      "tool_id": "compare-runway-ml-vs-synthesia",
+      "published_at": "2026-04-03"
     }
   ]
 }
