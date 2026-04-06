@@ -28,7 +28,7 @@ except ImportError:
     sys.exit(1)
 
 
-SITE_URL = "https://sifttools.com/"
+SITE_URL = "sc-domain:sifttools.com"
 SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
 DATA_FILE = os.path.join(os.path.dirname(__file__), "../data/gsc_latest.json")
 
