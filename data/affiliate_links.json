@@ -119,6 +119,181 @@
       "commission": "$20 per sale",
       "program_url": "",
       "status": "pending"
+    },
+    "github-copilot": {
+      "url": "https://github.com/features/copilot",
+      "affiliate_url": "",
+      "commission": "varies",
+      "program_url": "https://partner.github.com",
+      "status": "pending"
+    },
+    "chatgpt": {
+      "url": "https://chat.openai.com",
+      "affiliate_url": "",
+      "commission": "no public program",
+      "program_url": "",
+      "status": "pending"
+    },
+    "gemini": {
+      "url": "https://gemini.google.com",
+      "affiliate_url": "",
+      "commission": "no public program",
+      "program_url": "",
+      "status": "pending"
+    },
+    "heygen": {
+      "url": "https://www.heygen.com",
+      "affiliate_url": "",
+      "commission": "30% recurring",
+      "program_url": "https://www.heygen.com/affiliate",
+      "status": "pending"
+    },
+    "dall-e-3": {
+      "url": "https://openai.com/dall-e-3",
+      "affiliate_url": "",
+      "commission": "no public program",
+      "program_url": "",
+      "status": "pending"
+    },
+    "leonardo-ai": {
+      "url": "https://leonardo.ai",
+      "affiliate_url": "",
+      "commission": "25% recurring",
+      "program_url": "https://leonardo.ai/affiliate",
+      "status": "pending"
+    },
+    "ideogram": {
+      "url": "https://ideogram.ai",
+      "affiliate_url": "",
+      "commission": "varies",
+      "program_url": "",
+      "status": "pending"
+    },
+    "bolt-new": {
+      "url": "https://bolt.new",
+      "affiliate_url": "",
+      "commission": "varies",
+      "program_url": "",
+      "status": "pending"
+    },
+    "v0": {
+      "url": "https://v0.dev",
+      "affiliate_url": "",
+      "commission": "no public program",
+      "program_url": "",
+      "status": "pending"
+    },
+    "murf-ai": {
+      "url": "https://murf.ai",
+      "affiliate_url": "",
+      "commission": "30% recurring",
+      "program_url": "https://murf.ai/affiliate",
+      "status": "pending"
+    },
+    "microsoft-copilot": {
+      "url": "https://copilot.microsoft.com",
+      "affiliate_url": "",
+      "commission": "no public program",
+      "program_url": "",
+      "status": "pending"
+    },
+    "rytr": {
+      "url": "https://rytr.me",
+      "affiliate_url": "",
+      "commission": "30% recurring",
+      "program_url": "https://rytr.me/affiliate",
+      "status": "pending"
+    },
+    "luma-ai": {
+      "url": "https://lumalabs.ai",
+      "affiliate_url": "",
+      "commission": "varies",
+      "program_url": "",
+      "status": "pending"
+    },
+    "invideo-ai": {
+      "url": "https://invideo.io",
+      "affiliate_url": "",
+      "commission": "25% recurring",
+      "program_url": "https://invideo.io/affiliate",
+      "status": "pending"
+    },
+    "framer-ai": {
+      "url": "https://www.framer.com",
+      "affiliate_url": "",
+      "commission": "20% recurring",
+      "program_url": "https://www.framer.com/affiliates",
+      "status": "pending"
+    },
+    "figma-ai": {
+      "url": "https://www.figma.com",
+      "affiliate_url": "",
+      "commission": "varies",
+      "program_url": "https://www.figma.com/partners",
+      "status": "pending"
+    },
+    "semrush": {
+      "url": "https://www.semrush.com",
+      "affiliate_url": "",
+      "commission": "$200 per sale",
+      "program_url": "https://www.semrush.com/partner/affiliate",
+      "status": "pending"
+    },
+    "tabnine": {
+      "url": "https://www.tabnine.com",
+      "affiliate_url": "",
+      "commission": "30% recurring",
+      "program_url": "https://www.tabnine.com/affiliates",
+      "status": "pending"
+    },
+    "character-ai": {
+      "url": "https://character.ai",
+      "affiliate_url": "",
+      "commission": "no public program",
+      "program_url": "",
+      "status": "pending"
+    },
+    "stable-diffusion": {
+      "url": "https://stability.ai",
+      "affiliate_url": "",
+      "commission": "no public program",
+      "program_url": "",
+      "status": "pending"
+    },
+    "motion": {
+      "url": "https://www.usemotion.com",
+      "affiliate_url": "",
+      "commission": "30% recurring",
+      "program_url": "https://www.usemotion.com/affiliate",
+      "status": "pending"
+    },
+    "adobe-podcast": {
+      "url": "https://podcast.adobe.com",
+      "affiliate_url": "",
+      "commission": "85% first month (Adobe CC)",
+      "program_url": "https://www.adobe.com/affiliates.html",
+      "status": "pending"
+    },
+    "codeium": {
+      "url": "https://codeium.com",
+      "affiliate_url": "",
+      "commission": "varies",
+      "program_url": "",
+      "status": "pending"
+    },
+    "hypotenuse-ai": {
+      "url": "https://www.hypotenuse.ai",
+      "affiliate_url": "",
+      "commission": "25% recurring",
+      "program_url": "https://www.hypotenuse.ai/affiliate",
+      "status": "pending"
+    },
+    "uizard": {
+      "url": "https://uizard.io",
+      "affiliate_url": "",
+      "commission": "30% recurring",
+      "program_url": "https://uizard.io/affiliate",
+      "status": "pending"
     }
   }
 }
